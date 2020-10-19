@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+      "dev": "vuepress dev docs",
+      "build": "vuepress build docs",
+      "commit": "vuepress build doc && git add .vuepress/dist -f && git commit -m 'commit'",
+      "deploy": "git push origin main",
       "docs:dev": "vuepress dev docs",
       "docs:build": "vuepress build docs"
   },
