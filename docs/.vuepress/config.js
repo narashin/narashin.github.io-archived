@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'VuePress 시작!',
+  title: 'Today Nara Learned',
   description: 'Hello World',
   themeConfig: {
       nav: [
