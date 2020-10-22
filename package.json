@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
-    "commit": "vuepress build docs && git add docs/.vuepress/dist -f && git commit -m 'commit'",
+    "commit": "vuepress build docs && git add . -f && git commit -m 'commit'",
     "deploy": "git push origin main",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
