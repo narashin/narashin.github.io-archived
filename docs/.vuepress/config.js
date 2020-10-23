@@ -27,14 +27,6 @@ module.exports = {
     ]
   },
   plugins: [['@vuepress/back-to-top'], 
-      ['@vuepress/plugin-active-header-links'], 
-      ['@vuepress/last-updated',
-      {
-        transformer: (timestamp, lang) => {
-          const moment = require('moment')
-          moment.locale(lang)
-          return moment(timestamp).format("YYYY/M/D h:m:s A")
-        }
-      }]
+      ['@vuepress/plugin-active-header-links']
   ]
 }
