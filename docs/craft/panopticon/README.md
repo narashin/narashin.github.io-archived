@@ -4,7 +4,7 @@ description: CloudTrail을 이용한 Security Group 수정 알림 Slack으로 �
 ---
 
 # {{ $frontmatter.title }}
-::: tip 요약
+::: tip 목표
 {{ $frontmatter.description }}
 :::
 
