@@ -1,4 +1,5 @@
 const moment = require('moment');
+const path = require('path');
 
 module.exports = {
   title: 'Today Nara Learned',
@@ -40,7 +41,7 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
-        '@img': '../img/'
+        '@img': path.join(__dirname, '../img/')
       }
     }
   }
