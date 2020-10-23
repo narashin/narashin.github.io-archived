@@ -36,5 +36,12 @@ module.exports = {
   },
   plugins: [['@vuepress/back-to-top'], 
       ['@vuepress/plugin-active-header-links']
-  ]
+  ],
+  configureWebpack: {
+    resolve: {
+      alias: {
+        '@img': '../img/'
+      }
+    }
+  }
 }
