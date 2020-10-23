@@ -1,10 +1,9 @@
 ---
 title: Blogging with VuePress
-lang: ko-KR
+lang: ko
 tags: ["test"]
 ---
 
 # {{ $frontmatter.title }}
 
-My blog post is written in {{ $frontmatter.language }}.
-
+아아아아ㅏ아아ㅏㅏ 

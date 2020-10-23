@@ -1,3 +1,5 @@
+const moment = require('moment');
+
 module.exports = {
   title: 'Today Nara Learned',
   description: 'TIL pages',
@@ -30,7 +32,7 @@ module.exports = {
       {
         transformer: (timestamp, lang) => {
           const moment = require('moment')
-          moment.locale('ko')
+          moment.locale(lang)
           return moment(timestamp).format("YYYY/M/D h:m:s A")
         }
       }]
