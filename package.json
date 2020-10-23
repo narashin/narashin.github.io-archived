@@ -19,6 +19,7 @@
     "vuepress": "^1.7.1"
   },
   "dependencies": {
+    "gray-matter": "^4.0.2",
     "moment": "^2.29.1"
   }
 }
