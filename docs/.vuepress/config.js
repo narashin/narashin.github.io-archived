@@ -23,6 +23,14 @@ module.exports = {
         items: [
           { text: 'nodebird', link: '/challenge/nodebird/' },
         ]
+      },
+      {
+        text: 'Craft',
+        ariaLabel: 'challenge',
+        items: [
+          { text: 'Panopticon', link: '/craft/panopticon/' },
+          { text: 'Price-checker', link: '/craft/pricechecker/' }
+        ]
       }
     ]
   },
