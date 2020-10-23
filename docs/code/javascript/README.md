@@ -11,3 +11,5 @@ tags: ["test"]
 :::tip
 되나
 :::
+
+<TagLinks />
