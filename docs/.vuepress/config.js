@@ -36,7 +36,13 @@ module.exports = {
     ]
   },
   plugins: [['@vuepress/back-to-top'], 
-      ['@vuepress/plugin-active-header-links']
+      ['@vuepress/plugin-active-header-links'],
+      [
+        '@vuepress/google-analytics',
+        {
+          'ga': '250310529'
+        }
+      ]
   ],
   configureWebpack: {
     resolve: {
