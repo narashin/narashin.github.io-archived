@@ -1,6 +1,6 @@
 const moment = require('moment');
 const path = require('path');
-let { getArticles }  = require(path.resolve('docs/.vuepress/sidebar'))
+// let { getArticles }  = require(path.resolve('docs/.vuepress/sidebar'))
 
 module.exports = {
   title: 'Today Nara Learned',
@@ -9,14 +9,7 @@ module.exports = {
     ['link', { rel: 'icon', href: '/logo.jpg' }]
   ],
   themeConfig: {
-      sidebar: [
-        {
-            title: 'Panopticon',
-            path: '/craft/panopticon/',
-            collapsable: true,
-            children: getArticles('craft/panopticon')
-        }
-      ],
+      sidebar: 'auto',
       nav: [
       { text: 'Home', link: '/' },
       { text: 'About', link: '/about/' },

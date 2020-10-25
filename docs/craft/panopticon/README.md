@@ -2,6 +2,7 @@
 title: Panopticon
 description: CloudTrail을 이용한 Security Group 수정 알림 Slack으로 수신하기
 tags: ["AWS", "CloudTrail", "Serverless"]
+sidebar: auto
 ---
 
 # {{ $frontmatter.title }}
