@@ -18,16 +18,16 @@ module.exports = {
         link: '/til/',
       },
       {
-        text: '강의노트',
-        ariaLabel: '강의노트',
+        text: 'Note',
+        ariaLabel: 'Note',
         items: [
-          { text: '운영체제', link: '/note/os/' },
-          { text: '네트워크', link: '/note/network/' },
+          { text: 'OS', link: '/note/os/' },
+          { text: 'Network', link: '/note/network/' },
         ]
       },
       {
         text: 'Craft',
-        ariaLabel: 'code craft',
+        ariaLabel: 'Code craft',
         items: [
           { text: 'Panopticon', link: '/craft/panopticon/' },
           { text: 'Library', link: '/craft/libary/' },

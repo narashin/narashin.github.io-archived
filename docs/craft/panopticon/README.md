@@ -9,8 +9,6 @@ sidebar: auto
 ::: tip 목표
 {{ $frontmatter.description }}
 :::
-
-[[toc]]
    
 ## 0. 시나리오
 
