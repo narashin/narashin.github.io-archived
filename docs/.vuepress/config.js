@@ -9,22 +9,20 @@ module.exports = {
     ['link', { rel: 'icon', href: '/logo.jpg' }]
   ],
   themeConfig: {
-      sidebar: 'auto',
+      sidebar: false,
       nav: [
       { text: 'Home', link: '/' },
       { text: 'About', link: '/about/' },
       {
-        text: 'Code',
-        ariaLabel: 'code',
-        items: [
-          { text: 'Javascript', link: '/code/javascript/' },
-        ]
+        text: 'TIL',
+        link: '/til/',
       },
       {
-        text: 'Challenge',
-        ariaLabel: 'challenge',
+        text: '강의노트',
+        ariaLabel: '강의노트',
         items: [
-          { text: 'nodebird', link: '/challenge/nodebird/' },
+          { text: '운영체제', link: '/note/os/' },
+          { text: '네트워크', link: '/note/network/' },
         ]
       },
       {
@@ -32,7 +30,7 @@ module.exports = {
         ariaLabel: 'code craft',
         items: [
           { text: 'Panopticon', link: '/craft/panopticon/' },
-          { text: 'Price-checker', link: '/craft/pricechecker/' }
+          { text: 'Library', link: '/craft/libary/' },
         ]
       }
     ]
