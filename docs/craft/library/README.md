@@ -23,4 +23,4 @@ sidebar: auto
 
 ## 1. 스키마 설정하기
 
-![ERD](@img/library/2021-07-18 6.38.37.png)
+![ERD](~@img/library/2021-07-18_6.38.37.png)

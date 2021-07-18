@@ -1,15 +1,20 @@
-const moment = require('moment');
 const path = require('path');
-// let { getArticles }  = require(path.resolve('docs/.vuepress/sidebar'))
+let { getArticles }  = require(path.resolve('docs/.vuepress/sidebar'))
 
 module.exports = {
   title: 'Today Nara Learned',
-  description: 'TIL pages',
+  description: '또 하나 배워갑니다.',
   head: [
     ['link', { rel: 'icon', href: '/logo.jpg' }]
   ],
   themeConfig: {
-      sidebar: false,
+      sidebar: [
+        {
+            title: 'Today Nara Learned',
+            collapsable: true,
+            children: getArticles('vuejs/vuepress')
+        }
+    ],
       nav: [
       { text: 'Home', link: '/' },
       { text: 'About', link: '/about/' },
