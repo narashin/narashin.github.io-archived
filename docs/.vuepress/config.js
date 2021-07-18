@@ -30,7 +30,7 @@ module.exports = {
         ariaLabel: 'Code craft',
         items: [
           { text: 'Panopticon', link: '/craft/panopticon/' },
-          { text: 'Library', link: '/craft/libary/' },
+          { text: 'Library', link: '/craft/library/' },
         ]
       }
     ]
