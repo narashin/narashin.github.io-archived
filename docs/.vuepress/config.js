@@ -22,13 +22,16 @@ module.exports = {
         items: [
           { text: 'OS', link: '/note/os/' },
           { text: 'Network', link: '/note/network/' },
-          { text: 'Baekjoon', link: '/note/baekjoon' },
+          { text: 'BOJ', link: '/note/boj/' },
         ],
       },
       {
         text: 'Craft',
         ariaLabel: 'Code craft',
-        items: [{ text: 'Panopticon', link: '/craft/panopticon/' }],
+        items: [
+          { text: 'Panopticon', link: '/craft/panopticon/' },
+          { text: 'Cheakbbang', link: '/craft/cheakbbang/' },
+        ],
       },
     ],
   },
