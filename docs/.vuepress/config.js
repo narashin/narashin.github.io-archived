@@ -6,13 +6,13 @@ module.exports = {
   description: '또 하나 배워갑니다.',
   head: [['link', { rel: 'icon', href: '/logo.jpg' }]],
   themeConfig: {
-    sidebar: [
-      {
-        title: 'Today Nara Learned',
-        collapsable: true,
-        children: getArticles('vuejs/vuepress'),
-      },
-    ],
+    // sidebar: [
+    //   {
+    //     title: 'Today Nara Learned',
+    //     collapsable: true,
+    //     children: getArticles('vuejs/vuepress'),
+    //   },
+    // ],
     nav: [
       { text: 'Home', link: '/' },
       { text: 'About', link: '/about/' },
