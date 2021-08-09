@@ -2,6 +2,7 @@
 title: 입출력과 사칙연산
 description: 입출력과 사칙연산과 관련한 백준 문제풀이
 sidebar: auto
+sidebarDepth: 2
 ---
 
 [[toc]]

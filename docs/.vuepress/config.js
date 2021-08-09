@@ -7,15 +7,13 @@ module.exports = {
   head: [['link', { rel: 'icon', href: '/logo.jpg' }]],
   themeConfig: {
     sidebar: [
-      // {
-      //   title: '입출력과 사친연산',   // required
-      //   path: '/note/boj/',      // optional, link of the title, which should be an absolute path and must exist
-      //   collapsable: true, // optional, defaults to true
-      //   sidebarDepth: 1,    // optional, defaults to 1
-      //   children: [
-      //     '/'
-      //   ]
-      // },
+      {
+        title: 'BOJ', // required
+        path: '/note/boj/', // optional, link of the title, which should be an absolute path and must exist
+        collapsable: false, // optional, defaults to true
+        sidebarDepth: 2, // optional, defaults to 1
+        children: ['/'],
+      },
     ],
     nav: [
       { text: 'Home', link: '/' },
