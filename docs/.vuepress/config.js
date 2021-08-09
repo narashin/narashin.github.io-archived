@@ -8,7 +8,7 @@ module.exports = {
   head: [['link', { rel: 'icon', href: '/logo.jpg' }]],
   themeConfig: {
     sidebar: {
-      '/note/boj/': getSideBar('note/boj', 'boj'),
+      '/note/boj/': getSideBar('note/boj', 'io'),
     },
     nav: [
       { text: 'Home', link: '/' },
