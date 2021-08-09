@@ -68,4 +68,16 @@ module.exports = {
       },
     },
   },
+  chainWebpack: (config, isServer) => {
+    config.module
+      .rule('vue')
+      .uses.store.get('vue-loader')
+      .store.get('options').transformAssetUrls = {
+      video: ['src', 'poster'],
+      source: 'src',
+      img: 'src',
+      image: ['xlink:href', 'href'],
+      a: 'href',
+    };
+  },
 };
