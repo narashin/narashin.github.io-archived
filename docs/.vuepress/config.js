@@ -8,11 +8,18 @@ module.exports = {
   themeConfig: {
     sidebar: [
       {
+        title: 'AWS', // required
+        path: '/note/aws/', // optional, link of the title, which should be an absolute path and must exist
+        collapsable: true, // optional, defaults to true
+        sidebarDepth: 1, // optional, defaults to 1
+        children: ['/'],
+      },
+      {
         title: 'BOJ', // required
         path: '/note/boj/', // optional, link of the title, which should be an absolute path and must exist
         collapsable: false, // optional, defaults to true
         sidebarDepth: 1, // optional, defaults to 1
-        children: ['/'],
+        children: ['/note/boj/io.md', '/note/boj/if.md'],
       },
     ],
     nav: [
