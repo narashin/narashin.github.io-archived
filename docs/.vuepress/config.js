@@ -7,29 +7,29 @@ module.exports = {
   head: [['link', { rel: 'icon', href: '/logo.jpg' }]],
   themeConfig: {
     sidebar: {
-      // '/note/boj/': [
-      //   {
-      //     title: 'BOJ',
-      //     children: getChildren('./docs/note/boj/'),
-      //   },
-      // ],
-      // '/note/aws/': [
-      //   {
-      //     title: 'AWS',
-      //     children: getChildren('./docs/note/aws/'),
-      //   },
-      // ],
+      '/til/boj/': [
+        {
+          title: 'BOJ',
+          children: getChildren('./docs/til/boj/'),
+        },
+      ],
+      '/til/aws/': [
+        {
+          title: 'AWS',
+          children: getChildren('./docs/til/aws/'),
+        },
+      ],
     },
     nav: [
       { text: 'Home', link: '/' },
       { text: 'About', link: '/about/' },
       {
-        text: 'Note',
-        ariaLabel: 'Note',
+        text: 'TIL',
+        ariaLabel: 'TIL',
         items: [
-          { text: 'AWS', link: '/note/aws/' },
-          { text: 'Computer Science', link: '/note/cs/' },
-          { text: 'BOJ', link: '/note/boj/' },
+          { text: 'AWS', link: '/til/aws/' },
+          { text: 'Computer Science', link: '/til/cs/' },
+          { text: 'BOJ', link: '/til/boj/' },
         ],
       },
       {
