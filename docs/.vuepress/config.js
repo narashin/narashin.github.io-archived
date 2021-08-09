@@ -1,6 +1,5 @@
 const path = require('path');
-const fs = require('fs');
-let { getArticles } = require(path.resolve('docs/.vuepress/sidebar'));
+// let { getArticles } = require(path.resolve('docs/.vuepress/sidebar'));
 
 module.exports = {
   title: 'Today Nara Learned',
@@ -23,8 +22,8 @@ module.exports = {
         text: 'Note',
         ariaLabel: 'Note',
         items: [
-          { text: 'OS', link: '/note/os/' },
-          { text: 'Network', link: '/note/network/' },
+          { text: 'AWS', link: '/note/aws/' },
+          { text: 'Computer Science', link: '/note/cs/' },
           { text: 'BOJ', link: '/note/boj/' },
         ],
       },

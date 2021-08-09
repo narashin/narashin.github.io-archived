@@ -22,7 +22,6 @@
   "dependencies": {
     "directory-tree": "^2.2.5",
     "gray-matter": "^4.0.2",
-    "moment": "^2.29.1",
-    "vuepress-plugin-auto-sidebar": "^2.3.2"
+    "moment": "^2.29.1"
   }
 }
