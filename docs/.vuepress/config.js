@@ -1,4 +1,5 @@
 const path = require('path');
+const fs = require('fs');
 let { getArticles } = require(path.resolve('docs/.vuepress/sidebar'));
 
 module.exports = {
@@ -7,11 +8,7 @@ module.exports = {
   head: [['link', { rel: 'icon', href: '/logo.jpg' }]],
   themeConfig: {
     sidebar: {
-      '/note/boj/': [
-        '' /* /foo/ */,
-        'io' /* /foo/one.html */,
-        'if' /* /foo/two.html */,
-      ],
+      '/note/boj/': getSideBar('note/boj', 'boj'),
     },
     nav: [
       { text: 'Home', link: '/' },
@@ -53,3 +50,18 @@ module.exports = {
     },
   },
 };
+
+function getSideBar(folder, title) {
+  const extension = ['.md'];
+
+  const files = fs
+    .readdirSync(path.join(`${__dirname}/../${folder}`))
+    .filter(
+      (item) =>
+        item.toLowerCase() != 'readme.md' &&
+        fs.statSync(path.join(`${__dirname}/../${folder}`, item)).isFile() &&
+        extension.includes(path.extname(item))
+    );
+
+  return [{ title: title, children: ['', ...files] }];
+}
