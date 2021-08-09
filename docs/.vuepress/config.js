@@ -1,30 +1,25 @@
 const path = require('path');
-let { getArticles } = require(path.resolve('docs/.vuepress/sidebar'));
+var getChildren = require('./childscript');
 
 module.exports = {
   title: 'Today Nara Learned',
   description: '또 하나 배워갑니다.',
   head: [['link', { rel: 'icon', href: '/logo.jpg' }]],
   themeConfig: {
-    sidebar: [
-      {
-        title: 'AWS', // required
-        path: '/note/aws/', // optional, link of the title, which should be an absolute path and must exist
-        collapsable: true, // optional, defaults to true
-        sidebarDepth: 1, // optional, defaults to 1
-        children: ['/'],
-      },
-      {
-        title: 'BOJ', // required
-        path: '/note/boj/', // optional, link of the title, which should be an absolute path and must exist
-        collapsable: false, // optional, defaults to true
-        sidebarDepth: 1, // optional, defaults to 1
-        children: [
-          ['/note/boj/io.md', 'IO'],
-          ['/note/boj/if.md', 'IF'],
-        ],
-      },
-    ],
+    sidebar: {
+      '/note/boj/': [
+        {
+          title: 'BOJ',
+          children: getChildren('./docs/note/boj/'),
+        },
+      ],
+      '/note/aws/': [
+        {
+          title: 'AWS',
+          children: getChildren('./docs/note/aws/'),
+        },
+      ],
+    },
     nav: [
       { text: 'Home', link: '/' },
       { text: 'About', link: '/about/' },
