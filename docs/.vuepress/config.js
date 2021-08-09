@@ -1,5 +1,5 @@
 const path = require('path');
-// let { getArticles } = require(path.resolve('docs/.vuepress/sidebar'));
+let { getArticles } = require(path.resolve('docs/.vuepress/sidebar'));
 
 module.exports = {
   title: 'Today Nara Learned',
@@ -12,7 +12,7 @@ module.exports = {
         path: '/note/aws/', // optional, link of the title, which should be an absolute path and must exist
         collapsable: true, // optional, defaults to true
         sidebarDepth: 1, // optional, defaults to 1
-        children: ['/'],
+        children: getArticles('vuejs/vuepress'),
       },
       {
         title: 'BOJ', // required
