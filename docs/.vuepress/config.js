@@ -6,7 +6,13 @@ module.exports = {
   description: '또 하나 배워갑니다.',
   head: [['link', { rel: 'icon', href: '/logo.jpg' }]],
   themeConfig: {
-    sidebar: [],
+    sidebar: {
+      '/note/boj/': [
+        '' /* /foo/ */,
+        'io' /* /foo/one.html */,
+        'if' /* /foo/two.html */,
+      ],
+    },
     nav: [
       { text: 'Home', link: '/' },
       { text: 'About', link: '/about/' },
