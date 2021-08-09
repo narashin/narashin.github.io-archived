@@ -19,6 +19,12 @@ module.exports = {
           children: getChildren('./docs/til/aws/'),
         },
       ],
+      '/til/cs/': [
+        {
+          title: 'Computer Science',
+          children: getChildren('./docs/til/cs/'),
+        },
+      ],
     },
     nav: [
       { text: 'Home', link: '/' },

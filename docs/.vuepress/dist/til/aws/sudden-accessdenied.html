@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>접속이 잘 되던 KeyPair가 갑자기 Permission Denied 된다 | Today Nara Learned</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <link rel="icon" href="/logo.jpg">
+    <meta name="description" content="접속이 잘 되던 KeyPair가 갑자기 Permission Denied 된다">
+    
+    <link rel="preload" href="/assets/css/0.styles.b1e54e08.css" as="style"><link rel="preload" href="/assets/js/app.da0944bb.js" as="script"><link rel="preload" href="/assets/js/2.3cbefd8c.js" as="script"><link rel="preload" href="/assets/js/30.50e3af52.js" as="script"><link rel="prefetch" href="/assets/js/10.f3e72a04.js"><link rel="prefetch" href="/assets/js/11.2379a1e3.js"><link rel="prefetch" href="/assets/js/12.767dd325.js"><link rel="prefetch" href="/assets/js/13.27006583.js"><link rel="prefetch" href="/assets/js/14.e7ad8514.js"><link rel="prefetch" href="/assets/js/15.0e4a2a0b.js"><link rel="prefetch" href="/assets/js/16.5c980ebc.js"><link rel="prefetch" href="/assets/js/17.39f3a2de.js"><link rel="prefetch" href="/assets/js/18.2664275c.js"><link rel="prefetch" href="/assets/js/19.9aacea9a.js"><link rel="prefetch" href="/assets/js/20.282fa962.js"><link rel="prefetch" href="/assets/js/21.6bf939e3.js"><link rel="prefetch" href="/assets/js/22.f569fc92.js"><link rel="prefetch" href="/assets/js/23.50e3c791.js"><link rel="prefetch" href="/assets/js/24.f22600e8.js"><link rel="prefetch" href="/assets/js/25.94273675.js"><link rel="prefetch" href="/assets/js/26.f873c7ad.js"><link rel="prefetch" href="/assets/js/27.7c674f1d.js"><link rel="prefetch" href="/assets/js/28.4efe749a.js"><link rel="prefetch" href="/assets/js/29.0cec0b66.js"><link rel="prefetch" href="/assets/js/3.bef1852b.js"><link rel="prefetch" href="/assets/js/31.5803fad4.js"><link rel="prefetch" href="/assets/js/32.2c60cdc3.js"><link rel="prefetch" href="/assets/js/33.47b7638c.js"><link rel="prefetch" href="/assets/js/34.1c5a0356.js"><link rel="prefetch" href="/assets/js/4.cad51517.js"><link rel="prefetch" href="/assets/js/5.b35b349b.js"><link rel="prefetch" href="/assets/js/6.db9318e0.js"><link rel="prefetch" href="/assets/js/7.92c77af3.js"><link rel="prefetch" href="/assets/js/8.741a9deb.js"><link rel="prefetch" href="/assets/js/9.4a33e2db.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b1e54e08.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Today Nara Learned</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  About
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="TIL" class="dropdown-title"><span class="title">TIL</span> <span class="arrow down"></span></button> <button type="button" aria-label="TIL" class="mobile-dropdown-title"><span class="title">TIL</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/til/aws/" class="nav-link router-link-active">
+  AWS
+</a></li><li class="dropdown-item"><!----> <a href="/til/cs/" class="nav-link">
+  Computer Science
+</a></li><li class="dropdown-item"><!----> <a href="/til/boj/" class="nav-link">
+  BOJ
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Code craft" class="dropdown-title"><span class="title">Craft</span> <span class="arrow down"></span></button> <button type="button" aria-label="Code craft" class="mobile-dropdown-title"><span class="title">Craft</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/craft/panopticon/" class="nav-link">
+  Panopticon
+</a></li><li class="dropdown-item"><!----> <a href="/craft/cheakbbang/" class="nav-link">
+  Cheakbbang
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  About
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="TIL" class="dropdown-title"><span class="title">TIL</span> <span class="arrow down"></span></button> <button type="button" aria-label="TIL" class="mobile-dropdown-title"><span class="title">TIL</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/til/aws/" class="nav-link router-link-active">
+  AWS
+</a></li><li class="dropdown-item"><!----> <a href="/til/cs/" class="nav-link">
+  Computer Science
+</a></li><li class="dropdown-item"><!----> <a href="/til/boj/" class="nav-link">
+  BOJ
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Code craft" class="dropdown-title"><span class="title">Craft</span> <span class="arrow down"></span></button> <button type="button" aria-label="Code craft" class="mobile-dropdown-title"><span class="title">Craft</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/craft/panopticon/" class="nav-link">
+  Panopticon
+</a></li><li class="dropdown-item"><!----> <a href="/craft/cheakbbang/" class="nav-link">
+  Cheakbbang
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>AWS</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/til/aws/" aria-current="page" class="sidebar-link">/til/aws/</a></li><li><a href="/til/aws/apache-server-error.html" class="sidebar-link">특정 브라우저에서만 접속이 되지 않거나, 간헐적으로 되는 현상</a></li><li><a href="/til/aws/cloudfront-ssl.html" class="sidebar-link">CloudFront를 이용한 SSL 설정</a></li><li><a href="/til/aws/domain-move-to-another-account.html" class="sidebar-link">AWS Account 간 Domain 이동 - Route53</a></li><li><a href="/til/aws/ebs-expand.html" class="sidebar-link">EBS 볼륨 확장 하는 방법</a></li><li><a href="/til/aws/ec2-serverconnect-error.html" class="sidebar-link">AWS EC2 서버 접속 오류시 확인사항</a></li><li><a href="/til/aws/ec2-swap.html" class="sidebar-link">EC2 Swap 설정 가이드</a></li><li><a href="/til/aws/mediaconvert-specific-queue.html" class="sidebar-link">MediaConvert 작업 생성시 특정 Queue를 지정할 수 있는 Lambda 코드</a></li><li><a href="/til/aws/medialive-alert.html" class="sidebar-link">CloudWatch와 SNS을 통한 MediaLive Alert 알람 생성</a></li><li><a href="/til/aws/medialive-duplication.html" class="sidebar-link">MediaLive 이중화 구성을 위한 MediaPackage 및 MediaLive 구성 및 설정 가이드</a></li><li><a href="/til/aws/mediastore-all-remove.html" class="sidebar-link">MediaStore Container 내 전체 파일 삭제 스크립트</a></li><li><a href="/til/aws/no-reboot-0byte.html" class="sidebar-link">No Reboot로 생성한 EC2 AMI 내 파일크기가 0byte다</a></li><li><a href="/til/aws/s3-lifecycle.html" class="sidebar-link">S3에 저장한 데이터를 일정 시간 후에 삭제하고 싶다</a></li><li><a href="/til/aws/sudden-accessdenied.html" aria-current="page" class="active sidebar-link">접속이 잘 되던 KeyPair가 갑자기 Permission Denied 된다</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/til/aws/sudden-accessdenied.html#포스트모텀-post-mortem" class="sidebar-link">포스트모텀(Post-mortem)</a></li><li class="sidebar-sub-header"><a href="/til/aws/sudden-accessdenied.html#개요-overview" class="sidebar-link">개요(Overview)</a></li><li class="sidebar-sub-header"><a href="/til/aws/sudden-accessdenied.html#시간-분석-timeline" class="sidebar-link">시간 분석(Timeline)</a></li><li class="sidebar-sub-header"><a href="/til/aws/sudden-accessdenied.html#응급-조치-immediate-action" class="sidebar-link">응급 조치(Immediate Action)</a></li><li class="sidebar-sub-header"><a href="/til/aws/sudden-accessdenied.html#근본-원인-분석-root-cause-analysis" class="sidebar-link">근본 원인 분석(Root Cause Analysis)</a></li><li class="sidebar-sub-header"><a href="/til/aws/sudden-accessdenied.html#_5why-분석-5why-analysis" class="sidebar-link">5Why 분석(5Why Analysis)</a></li><li class="sidebar-sub-header"><a href="/til/aws/sudden-accessdenied.html#논의-discussion" class="sidebar-link">논의(Discussion)</a></li><li class="sidebar-sub-header"><a href="/til/aws/sudden-accessdenied.html#예방책-preventative-measures" class="sidebar-link">예방책(Preventative Measures)</a></li><li class="sidebar-sub-header"><a href="/til/aws/sudden-accessdenied.html#모니터링-monitoring" class="sidebar-link">모니터링(Monitoring)</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="접속이-잘-되던-keypair가-갑자기-permission-denied-된다"><a href="#접속이-잘-되던-keypair가-갑자기-permission-denied-된다" class="header-anchor">#</a> 접속이 잘 되던 KeyPair가 갑자기 Permission Denied 된다</h1> <h2 id="포스트모텀-post-mortem"><a href="#포스트모텀-post-mortem" class="header-anchor">#</a> 포스트모텀(Post-mortem)</h2> <p>기존에 잘 사용 중이던 KeyPair(.pem)가<code>Permission denied (publickey,gssapi-keyex,gssapi-with-mic).</code> 됨</p> <h2 id="개요-overview"><a href="#개요-overview" class="header-anchor">#</a> 개요(Overview)</h2> <ul><li>고객사에서, 어제 새로 생성한 인스턴스에 접근이 안 된다며 연락을 받았음.</li> <li>새로 생성한 인스턴스 사양은 c5.large, OS는 CentOS7.</li> <li>동일 구성으로 다른 VPC에 생성한 인스턴스는 접속이 원활했음(두 인스턴스간 KeyPair가 상이함).</li></ul> <h2 id="시간-분석-timeline"><a href="#시간-분석-timeline" class="header-anchor">#</a> 시간 분석(Timeline)</h2> <ul><li><p><code>16:01 PM</code> : 장애 상황 파악</p> <div class="language-bash extra-class"><pre class="language-bash"><code>nara@MZC-NARA:~/.ssh<span class="token operator">|</span>⇒  <span class="token function">ssh</span> -i 키0 ubuntu@접속할 인스턴스
+Last login: Fri Feb <span class="token number">15</span> <span class="token number">16</span>:25:53 <span class="token number">2019</span> from <span class="token number">14.32</span>.250.213
+ubuntu@ip-10-0-1-161:~$ <span class="token function">ssh</span> centos@10.0.45.159
+The authenticity of <span class="token function">host</span> <span class="token string">'10.0.45.159 (10.0.45.159)'</span> can<span class="token string">'t be established.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '</span><span class="token number">10.0</span>.45.159' <span class="token punctuation">(</span>ECDSA<span class="token punctuation">)</span> to the list of known hosts.
+centos@10.0.45.159: Permission denied <span class="token punctuation">(</span>publickey,gssapi-keyex,gssapi-with-mic<span class="token punctuation">)</span>.
+</code></pre></div></li> <li><p><code>16:04 PM</code> : 다른 VPC에 동일 구성으로 생성된 인스턴스에 접속</p> <ul><li><p>원활하게 접속 됨</p> <div class="language-bash extra-class"><pre class="language-bash"><code>nara@MZC-NARA:~/.ssh<span class="token operator">|</span>⇒  <span class="token function">ssh</span> -i 키0 ubuntu@다른 인스턴스
+Last login: Tue Feb <span class="token number">12</span> <span class="token number">13</span>:29:59 <span class="token number">2019</span> from <span class="token number">14.32</span>.250.213
+ubuntu@ip-10-254-1-24:~$ <span class="token function">ssh</span> centos@10.254.25.26
+The authenticity of <span class="token function">host</span> <span class="token string">'10.254.25.26 (10.254.25.26)'</span> can<span class="token string">'t be established.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '</span><span class="token number">10.254</span>.25.26' <span class="token punctuation">(</span>ECDSA<span class="token punctuation">)</span> to the list of known hosts.
+<span class="token punctuation">[</span>centos@ip-10-254-25-26 ~<span class="token punctuation">]</span>$
+</code></pre></div></li></ul></li> <li><p><code>16:10 PM</code> : 접속 오류가 발생한 인스턴스와 동일 VPC에, 동일 KeyPair로 생성된 다른 인스턴스에 접속 시도</p> <ul><li><p>해당 KeyPair를 사용하여 접속하는 인스턴스에 모두 접속 실패. (<code>Permission denied</code>)</p> <div class="language-bash extra-class"><pre class="language-bash"><code>ubuntu@ip-10-0-1-161:~$ <span class="token function">ssh</span> centos@10.0.45.159
+centos@10.0.45.159: Permission denied <span class="token punctuation">(</span>publickey,gssapi-keyex,gssapi-with-mic<span class="token punctuation">)</span>.
+ubuntu@ip-10-0-1-161:~$ <span class="token function">ssh</span> ubuntu@10.0.17.22
+ubuntu@10.0.17.22<span class="token string">'s password:
+
+ubuntu@ip-10-0-1-161:~$ ssh ubuntu@10.0.57.39
+The authenticity of host '</span><span class="token number">10.0</span>.57.39 <span class="token punctuation">(</span><span class="token number">10.0</span>.57.39<span class="token punctuation">)</span><span class="token string">' can'</span>t be established.
+ECDSA key fingerprint is SHA256:v4eIpa+LzMevP9j/Zswex0aZwKUuGiWz7mkT2f489vc.
+Are you sure you want to <span class="token builtin class-name">continue</span> connecting <span class="token punctuation">(</span>yes/no<span class="token punctuation">)</span>? <span class="token function">yes</span>
+Warning: Permanently added <span class="token string">'10.0.57.39'</span> <span class="token punctuation">(</span>ECDSA<span class="token punctuation">)</span> to the list of known hosts.
+ubuntu@10.0.57.39: Permission denied <span class="token punctuation">(</span>publickey<span class="token punctuation">)</span>.
+ubuntu@ip-10-0-1-161:~$ <span class="token function">ssh</span> ubuntu@10.0.101.55
+ubuntu@10.0.101.55<span class="token string">'s password:
+
+ubuntu@ip-10-0-1-161:~$ ssh ec2-user@10.0.51.240
+ec2-user@10.0.51.240'</span>s password:
+
+ubuntu@ip-10-0-1-161:~$ <span class="token function">ssh</span> ubuntu@10.0.25.64
+The authenticity of <span class="token function">host</span> <span class="token string">'10.0.25.64 (10.0.25.64)'</span> can<span class="token string">'t be established.
+ECDSA key fingerprint is SHA256:g4A.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '</span><span class="token number">10.0</span>.25.64' <span class="token punctuation">(</span>ECDSA<span class="token punctuation">)</span> to the list of known hosts.
+ubuntu@10.0.25.64: Permission denied <span class="token punctuation">(</span>publickey<span class="token punctuation">)</span>.
+</code></pre></div></li></ul></li> <li><p><code>ssh -vv</code> 명령어를 통해 debug 메시지 출력</p> <div class="language-bash extra-class"><pre class="language-bash"><code>ubuntu@ip-10-0-1-161:~$ <span class="token function">ssh</span> -vv centos@10.0.45.159
+OpenSSH_7.6p1 Ubuntu-4ubuntu0.2, OpenSSL <span class="token number">1.0</span>.2n  <span class="token number">7</span> Dec <span class="token number">2017</span>
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line <span class="token number">19</span>: Applying options <span class="token keyword">for</span> *
+debug2: resolving <span class="token string">&quot;10.0.45.159&quot;</span> port <span class="token number">22</span>
+debug2: ssh_connect_direct: needpriv <span class="token number">0</span>
+debug1: Connecting to <span class="token number">10.0</span>.45.159 <span class="token punctuation">[</span><span class="token number">10.0</span>.45.159<span class="token punctuation">]</span> port <span class="token number">22</span>.
+debug1: Connection established.
+debug1: key_load_public: No such <span class="token function">file</span> or directory
+debug1: identity <span class="token function">file</span> /home/ubuntu/.ssh/id_rsa <span class="token builtin class-name">type</span> -1
+debug1: key_load_public: No such <span class="token function">file</span> or directory
+debug1: identity <span class="token function">file</span> /home/ubuntu/.ssh/id_rsa-cert <span class="token builtin class-name">type</span> -1
+debug1: key_load_public: No such <span class="token function">file</span> or directory
+debug1: identity <span class="token function">file</span> /home/ubuntu/.ssh/id_dsa <span class="token builtin class-name">type</span> -1
+debug1: key_load_public: No such <span class="token function">file</span> or directory
+<span class="token punctuation">..</span>.
+debug2: languages stoc:
+debug2: first_kex_follows <span class="token number">0</span><span class="token punctuation">..</span>.
+debug1: Authentications that can continue: publickey,gssapi-keyex,gssapi-with-mic
+debug1: Trying private key: /home/ubuntu/.ssh/id_rsa
+debug1: Trying private key: /home/ubuntu/.ssh/id_dsa
+debug1: Trying private key: /home/ubuntu/.ssh/id_ecdsa
+debug1: Trying private key: /home/ubuntu/.ssh/id_ed25519
+debug2: we did not send a packet, disable method
+debug1: No <span class="token function">more</span> authentication methods to try.
+centos@10.0.45.159: Permission denied <span class="token punctuation">(</span>publickey,gssapi-keyex,gssapi-with-mic<span class="token punctuation">)</span>.
+</code></pre></div></li></ul> <h2 id="응급-조치-immediate-action"><a href="#응급-조치-immediate-action" class="header-anchor">#</a> 응급 조치(Immediate Action)</h2> <hr> <ul><li><p><code>ssh-add -l</code> 를 통해 ssh-agent 에 등록된 키를 확인하고 <code>Permission denied</code> 된 KeyPair가 등록되어 있지 않음을 확인.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>nara@MZC-NARA:~/.ssh<span class="token operator">|</span>⇒  ssh-add -l
+<span class="token number">2048</span> SHA256:--키1 <span class="token punctuation">(</span>RSA<span class="token punctuation">)</span>
+<span class="token number">2048</span> SHA256:--키2 <span class="token punctuation">(</span>RSA<span class="token punctuation">)</span>
+<span class="token number">2048</span> SHA256:--키3 <span class="token punctuation">(</span>RSA<span class="token punctuation">)</span>
+</code></pre></div></li> <li><p><code>ssh-add -D</code> 옵션으로 등록된 키를 다 삭제한 후, 오류가 발생한 Key를 등록함.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>nara@MZC-NARA:~/.ssh<span class="token operator">|</span>⇒  ssh-add -l
+<span class="token number">2048</span> SHA256:--키0 <span class="token punctuation">(</span>RSA<span class="token punctuation">)</span>
+</code></pre></div></li> <li><p>접속 확인</p> <div class="language-bash extra-class"><pre class="language-bash"><code>nara@MZC-NARA:~/.ssh<span class="token operator">|</span>⇒  <span class="token function">ssh</span> -i 키0 ubuntu@접속할 인스턴스
+Welcome to Ubuntu <span class="token number">18.04</span>.1 LTS <span class="token punctuation">(</span>GNU/Linux <span class="token number">4.15</span>.0-1031-aws x86_64<span class="token punctuation">)</span>
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Fri Feb <span class="token number">15</span> <span class="token number">16</span>:53:11 KST <span class="token number">2019</span>
+
+  System load:  <span class="token number">0.04</span>               Processes:           <span class="token number">121</span>
+  Usage of /:   <span class="token number">11.7</span>% of <span class="token number">29</span>.02GB   Users logged in:     <span class="token number">1</span>
+  Memory usage: <span class="token number">41</span>%                IP address <span class="token keyword">for</span> eth0: <span class="token number">10.0</span>.1.161
+  Swap usage:   <span class="token number">0</span>%
+
+ * <span class="token string">'snap info'</span> now shows the freshness of each channel.
+   Try <span class="token string">'snap info microk8s'</span> <span class="token keyword">for</span> all the latest goodness.
+
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
+
+ * Canonical Livepatch is available <span class="token keyword">for</span> installation.
+   - Reduce system reboots and improve kernel security. Activate at:
+     https://ubuntu.com/livepatch
+
+<span class="token number">103</span> packages can be updated.
+<span class="token number">0</span> updates are security updates.
+
+*** System restart required ***
+Last login: Fri Feb <span class="token number">15</span> <span class="token number">16</span>:52:32 <span class="token number">2019</span> from
+ubuntu@ip-10-0-1-161:~$ <span class="token function">ssh</span> centos@10.0.45.159
+<span class="token punctuation">[</span>centos@ip-10-0-45-159 ~<span class="token punctuation">]</span>$  <span class="token builtin class-name">exit</span>
+</code></pre></div></li></ul> <h2 id="근본-원인-분석-root-cause-analysis"><a href="#근본-원인-분석-root-cause-analysis" class="header-anchor">#</a> 근본 원인 분석(Root Cause Analysis)</h2> <hr> <ul><li><code>ssh-add</code> 로 등록되어 관리되고 있다고 생각한 KeyPair가 사실은 등록되어있지 않았음</li></ul> <h2 id="_5why-분석-5why-analysis"><a href="#_5why-분석-5why-analysis" class="header-anchor">#</a> 5Why 분석(5Why Analysis)</h2> <hr> <ul><li><code>ssh-agent</code> 에 대한 몰이해</li></ul> <h2 id="논의-discussion"><a href="#논의-discussion" class="header-anchor">#</a> 논의(Discussion)</h2> <hr> <ul><li><ul><li></li></ul></li></ul> <h2 id="예방책-preventative-measures"><a href="#예방책-preventative-measures" class="header-anchor">#</a> 예방책(Preventative Measures)</h2> <hr> <ul><li><ul><li></li></ul></li></ul> <h2 id="모니터링-monitoring"><a href="#모니터링-monitoring" class="header-anchor">#</a> 모니터링(Monitoring)</h2> <hr> <ul><li><ul><li></li></ul></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/til/aws/s3-lifecycle.html" class="prev">
+        S3에 저장한 데이터를 일정 시간 후에 삭제하고 싶다
+      </a></span> <!----></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.da0944bb.js" defer></script><script src="/assets/js/2.3cbefd8c.js" defer></script><script src="/assets/js/30.50e3af52.js" defer></script>
+  </body>
+</html>

@@ -11,16 +11,19 @@ sidebarDepth: 2
 [1000번 문제](https://www.acmicpc.net/problem/1000)  
 두 정수 A와 B를 입력받은 다음, A+B를 출력하는 프로그램을 작성하시오.
 
-```
+```js
 var fs = require('fs');
-var input = fs.readFileSync('/dev/stdin').toString().split(' ');
+var input = fs
+  .readFileSync('/dev/stdin')
+  .toString()
+  .split(' ');
 var a = parseInt(input[0]);
 var b = parseInt(input[1]);
 
-console.log(a+b);
-console.log(a-b);
-console.log(a*b);
-console.log(a/b);
+console.log(a + b);
+console.log(a - b);
+console.log(a * b);
+console.log(a / b);
 ```
 
 `readFileSync('/dev/stdin/')` 로 표준입력 장치 값을 읽는다.
@@ -61,16 +64,19 @@ A/B의 경우 몫만 구하는 문제이므로, parseInt()를 이용한다.
 ![Q.2588](<https://www.acmicpc.net/upload/images/f5NhGHVLM4Ix74DtJrwfC97KepPl27s%20(1).png>)  
 (1)과 (2)위치에 들어갈 세 자리 자연수가 주어질 때 (3), (4), (5), (6)위치에 들어갈 값을 구하는 프로그램을 작성하시오.
 
-```
+```js
 var fs = require('fs');
-var input = fs.readFileSync('/dev/stdin').toString().split('\n');
-var a = parseInt(input[0])
-var b = parseInt(input[1])
+var input = fs
+  .readFileSync('/dev/stdin')
+  .toString()
+  .split('\n');
+var a = parseInt(input[0]);
+var b = parseInt(input[1]);
 
-console.log(a*(b%10));
-console.log(a*Math.floor((b%100)/10));
-console.log(a*Math.floor(b/100));
-console.log(a*b);
+console.log(a * (b % 10));
+console.log(a * Math.floor((b % 100) / 10));
+console.log(a * Math.floor(b / 100));
+console.log(a * b);
 ```
 
 Math.floor()를 이용하면, 주어진 수 이하의 가장 큰 정수를 구할 수 있다.
