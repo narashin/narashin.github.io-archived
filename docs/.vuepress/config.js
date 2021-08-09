@@ -7,18 +7,18 @@ module.exports = {
   head: [['link', { rel: 'icon', href: '/logo.jpg' }]],
   themeConfig: {
     sidebar: {
-      '/note/boj/': [
-        {
-          title: 'BOJ',
-          children: getChildren('./docs/note/boj/'),
-        },
-      ],
-      '/note/aws/': [
-        {
-          title: 'AWS',
-          children: getChildren('./docs/note/aws/'),
-        },
-      ],
+      // '/note/boj/': [
+      //   {
+      //     title: 'BOJ',
+      //     children: getChildren('./docs/note/boj/'),
+      //   },
+      // ],
+      // '/note/aws/': [
+      //   {
+      //     title: 'AWS',
+      //     children: getChildren('./docs/note/aws/'),
+      //   },
+      // ],
     },
     nav: [
       { text: 'Home', link: '/' },
