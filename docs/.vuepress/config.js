@@ -21,6 +21,13 @@ module.exports = {
         sidebarDepth: 1, // optional, defaults to 1
         children: ['/note/boj/io.md', '/note/boj/if.md'],
       },
+      {
+        title: 'Computer Science', // required
+        path: '/note/cs/', // optional, link of the title, which should be an absolute path and must exist
+        collapsable: false, // optional, defaults to true
+        sidebarDepth: 1, // optional, defaults to 1
+        children: ['/note/boj/io.md', '/note/boj/if.md'],
+      },
     ],
     nav: [
       { text: 'Home', link: '/' },
