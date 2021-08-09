@@ -8,7 +8,7 @@ sidebar: auto
 # AWS Pricechecker - Serverless Architecture
 
 :::tip 코드
-코드는 회사 빌링 정보가 포함되어 있어 공개가 불가하다. 아쉽지만 아키텍처만 설명하겠다.
+코드는 회사 빌링 정보가 포함되어 있어 공개가 불가하다. 아쉽지만 아키텍처만 설명합니다.
 :::
 
 ## 0. 시나리오

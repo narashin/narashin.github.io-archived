@@ -66,11 +66,11 @@ ses.sendEmail(params, function(err, data) {
 
 ## 2. 전송된 이메일 확인
 
-![~@img/ses-unverified-email-reply/_2020-02-21__11.48.41.png](~@img/ses-unverified-email-reply/_2020-02-21__11.48.41.png)
+![~@img/ses-unverified-email-reply/ses-unverified-email-reply_11.48.41.png](~@img/ses-unverified-email-reply/ses-unverified-email-reply_11.48.41.png)
 
 ## Raw 데이터 확인
 
-![~@img/ses-unverified-email-reply/_2020-02-21__11.52.17.png](~@img/ses-unverified-email-reply/_2020-02-21__11.52.17.png)
+![~@img/ses-unverified-email-reply/ses-unverified-email-reply_11.52.17.png](~@img/ses-unverified-email-reply/ses-unverified-email-reply_11.52.17.png)
 
 ```
 Delivered-To: nara@mz.co.kr

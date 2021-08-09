@@ -17,13 +17,13 @@ tags: ['AWS', 'S3', 'S3Batch']
 
 1. ACL 일괄 변경을 원하는 S3 bucket으로 이동
 
-   ![~@img/acl-change-with-s3batch/_2020-07-14__11.27.23.png](~@img/acl-change-with-s3batch/_2020-07-14__11.27.23.png)
+   ![~@img/acl-change-with-s3batch/acl-change-with-s3batch_11.27.23.png](~@img/acl-change-with-s3batch/acl-change-with-s3batch_11.27.23.png)
 
 2. **관리**탭 의 **인벤토리**로 이동
 
-   ![~@img/acl-change-with-s3batch/_2020-07-14__11.29.29.png](~@img/acl-change-with-s3batch/_2020-07-14__11.29.29.png)
+   ![~@img/acl-change-with-s3batch/acl-change-with-s3batch_11.29.29.png](~@img/acl-change-with-s3batch/acl-change-with-s3batch_11.29.29.png)
 
-   ![~@img/acl-change-with-s3batch/_2020-07-14__11.29.36.png](~@img/acl-change-with-s3batch/_2020-07-14__11.29.36.png)
+   ![~@img/acl-change-with-s3batch/acl-change-with-s3batch_11.29.36.png](~@img/acl-change-with-s3batch/acl-change-with-s3batch_11.29.36.png)
 
 3. 매니페스트 생성을 위한 옵션 설정
    - 원하는 출력 형식, 객체 버전, 필드 선택, 암호화 등을 설정
@@ -69,20 +69,20 @@ tags: ['AWS', 'S3', 'S3Batch']
 
 # 2. 배치 작업 생성
 
-![~@img/acl-change-with-s3batch/_2020-07-14__11.30.39.png](~@img/acl-change-with-s3batch/_2020-07-14__11.30.39.png)
+![~@img/acl-change-with-s3batch/acl-change-with-s3batch_11.30.39.png](~@img/acl-change-with-s3batch/acl-change-with-s3batch_11.30.39.png)
 
 1. S3 > 배치작업 (Batch Operation) 으로 이동
 2. **작업 생성**
 
 ## 지역 및 매니페스트 선택
 
-![~@img/acl-change-with-s3batch/_2020-07-15__5.30.43.png](~@img/acl-change-with-s3batch/_2020-07-15__5.30.43.png)
+![~@img/acl-change-with-s3batch/acl-change-with-s3batch_5.30.43.png](~@img/acl-change-with-s3batch/acl-change-with-s3batch_5.30.43.png)
 
 매니페스트의 객체가 버전 지정된 버킷에 있는 경우 객체의 버전 ID를 지정해야 합니다. 작업을 생성하면 S3 배치 작업가 작업을 실행하기 전에 전체 매니페스트를 구문 분석합니다. 하지만 버킷 상태 "스냅샷"을 생성하지는 않습니다.
 
 매니페스트에는 수십억 개의 객체가 포함될 수 있으므로 작업을 실행하는 데 오래 걸릴 수 있습니다. 해당 객체에 대한 버전 ID를 지정하지 않은 상태에서 작업이 실행되는 동안 새 버전으로 객체를 덮어쓰면 Amazon S3는 작업 생성 시 존재했던 버전이 아니라 객체의 최신 버전에서 작업(operation)을 수행합니다. 이 문제를 피하는 유일한 방법은 매니페스트에 나열된 객체에 버전 ID를 지정하는 것입니다.
 
-![~@img/acl-change-with-s3batch/_2020-07-15__5.26.33.png](~@img/acl-change-with-s3batch/_2020-07-15__5.26.33.png)
+![~@img/acl-change-with-s3batch/acl-change-with-s3batch_5.26.33.png](~@img/acl-change-with-s3batch/acl-change-with-s3batch_5.26.33.png)
 
 3. 1에서 생성한 매니페스트를 선택
 
@@ -92,11 +92,11 @@ tags: ['AWS', 'S3', 'S3Batch']
 
 ## 작업 선택
 
-![~@img/acl-change-with-s3batch/_2020-07-15__6.07.17.png](~@img/acl-change-with-s3batch/_2020-07-15__6.07.17.png)
+![~@img/acl-change-with-s3batch/acl-change-with-s3batch_6.07.17.png](~@img/acl-change-with-s3batch/acl-change-with-s3batch_6.07.17.png)
 
 5. 작업 선택 > ACL(액세스 제어 목록) 바꾸기 선택
 
-![~@img/acl-change-with-s3batch/_2020-07-15__6.09.11.png](~@img/acl-change-with-s3batch/_2020-07-15__6.09.11.png)
+![~@img/acl-change-with-s3batch/acl-change-with-s3batch_6.09.11.png](~@img/acl-change-with-s3batch/acl-change-with-s3batch_6.09.11.png)
 
 6. 원하는 권한으로 설정
 
@@ -104,15 +104,15 @@ tags: ['AWS', 'S3', 'S3Batch']
 
 ## 추가 옵션 구성
 
-![~@img/acl-change-with-s3batch/_2020-07-15__6.17.49.png](~@img/acl-change-with-s3batch/_2020-07-15__6.17.49.png)
+![~@img/acl-change-with-s3batch/acl-change-with-s3batch_6.17.49.png](~@img/acl-change-with-s3batch/acl-change-with-s3batch_6.17.49.png)
 
 8. 배치 작업에 대한 설명과 우선 순위 설정
 
-![~@img/acl-change-with-s3batch/_2020-07-15__6.17.55.png](~@img/acl-change-with-s3batch/_2020-07-15__6.17.55.png)
+![~@img/acl-change-with-s3batch/acl-change-with-s3batch_6.17.55.png](~@img/acl-change-with-s3batch/acl-change-with-s3batch_6.17.55.png)
 
 9. 완료 보고서 작성 여부와 보고서 저장 위치 지정
 
-![~@img/acl-change-with-s3batch/_2020-07-15__6.19.26.png](~@img/acl-change-with-s3batch/_2020-07-15__6.19.26.png)
+![~@img/acl-change-with-s3batch/acl-change-with-s3batch_6.19.26.png](~@img/acl-change-with-s3batch/acl-change-with-s3batch_6.19.26.png)
 
 10. 배치 작업의 권한 설정
 
@@ -123,7 +123,7 @@ tags: ['AWS', 'S3', 'S3Batch']
 
 - IAM 역할 정책과 신뢰 정책을 어떻게 설정해야 할 지 모르겠다면, 위의 빨간 박스로 체크해둔 **IAM 역할 정책 템플릿 및 IAM 신뢰 정책보기** 를 클릭하여 정책 템플릿을 복사할 수 있다.
 
-  ![~@img/acl-change-with-s3batch/_2020-07-15__6.26.26.png](~@img/acl-change-with-s3batch/_2020-07-15__6.26.26.png)
+  ![~@img/acl-change-with-s3batch/acl-change-with-s3batch_6.26.26.png](~@img/acl-change-with-s3batch/acl-change-with-s3batch_6.26.26.png)
 
   - IAM 생성하기
 
@@ -132,11 +132,11 @@ tags: ['AWS', 'S3', 'S3Batch']
     1. IAM → 액세스 관리 → 정책 → **정책 생성**
     2. JSON 탭으로 이동
 
-    ![~@img/acl-change-with-s3batch/_2020-07-15__6.31.13.png](~@img/acl-change-with-s3batch/_2020-07-15__6.31.13.png)
+    ![~@img/acl-change-with-s3batch/acl-change-with-s3batch_6.31.13.png](~@img/acl-change-with-s3batch/acl-change-with-s3batch_6.31.13.png)
 
     - 위의 템플릿을 참조하여 JSON 작성
 
-    ![~@img/acl-change-with-s3batch/_2020-07-15__6.32.23.png](~@img/acl-change-with-s3batch/_2020-07-15__6.32.23.png)
+    ![~@img/acl-change-with-s3batch/acl-change-with-s3batch_6.32.23.png](~@img/acl-change-with-s3batch/acl-change-with-s3batch_6.32.23.png)
 
     - 저장
 
@@ -144,15 +144,15 @@ tags: ['AWS', 'S3', 'S3Batch']
 
     1. IAM → 액세스 관리 → 역할 → 역할 만들기
 
-    ![~@img/acl-change-with-s3batch/_2020-07-15__6.33.09.png](~@img/acl-change-with-s3batch/_2020-07-15__6.33.09.png)
+    ![~@img/acl-change-with-s3batch/acl-change-with-s3batch_6.33.09.png](~@img/acl-change-with-s3batch/acl-change-with-s3batch_6.33.09.png)
 
     2. S3 → S3 Batch Operation 선택
 
-    ![~@img/acl-change-with-s3batch/_2020-07-15__6.34.24.png](~@img/acl-change-with-s3batch/_2020-07-15__6.34.24.png)
+    ![~@img/acl-change-with-s3batch/acl-change-with-s3batch_6.34.24.png](~@img/acl-change-with-s3batch/acl-change-with-s3batch_6.34.24.png)
 
     3. 위에서 저장한 정책을 연결
 
-  ![~@img/acl-change-with-s3batch/_2020-07-15__6.39.25.png](~@img/acl-change-with-s3batch/_2020-07-15__6.39.25.png)
+  ![~@img/acl-change-with-s3batch/acl-change-with-s3batch_6.39.25.png](~@img/acl-change-with-s3batch/acl-change-with-s3batch_6.39.25.png)
 
   위에서 생성한 IAM Role 지정
 
@@ -160,11 +160,11 @@ tags: ['AWS', 'S3', 'S3Batch']
 
 # 3. 배치 작업 실행
 
-![~@img/acl-change-with-s3batch/_2020-07-15__7.17.24.png](~@img/acl-change-with-s3batch/_2020-07-15__7.17.24.png)
+![~@img/acl-change-with-s3batch/acl-change-with-s3batch_7.17.24.png](~@img/acl-change-with-s3batch/acl-change-with-s3batch_7.17.24.png)
 
 1. 위에서 생성한 배치 작업을 선택하고 **작업 실행**
 
-![~@img/acl-change-with-s3batch/_2020-07-15__7.20.15.png](~@img/acl-change-with-s3batch/_2020-07-15__7.20.15.png)
+![~@img/acl-change-with-s3batch/acl-change-with-s3batch_7.20.15.png](~@img/acl-change-with-s3batch/acl-change-with-s3batch_7.20.15.png)
 
 2. 작업 완료
 
