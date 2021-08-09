@@ -1,7 +1,6 @@
 ---
 title: BOJ
 description: BOJ
-sidebar: auto
 sidebarDepth: 2
 ---
 
