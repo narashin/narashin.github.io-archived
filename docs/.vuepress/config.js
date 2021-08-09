@@ -34,8 +34,8 @@ module.exports = {
         ariaLabel: 'TIL',
         items: [
           { text: 'AWS', link: '/til/aws/' },
-          { text: 'Computer Science', link: '/til/cs/' },
           { text: 'BOJ', link: '/til/boj/' },
+          { text: 'Computer Science', link: '/til/cs/' },
         ],
       },
       {

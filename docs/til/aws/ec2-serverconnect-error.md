@@ -4,7 +4,7 @@ description: AWS EC2 서버 접속 오류시 확인사항
 tags: ['AWS', 'EC2', 'TrobleShooting']
 ---
 
-# 확인 사항
+# AWS EC2 서버 접속 오류시 확인사항
 
 1. 인스턴스 정보
 2. 사용 포트

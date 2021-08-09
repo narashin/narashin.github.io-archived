@@ -4,6 +4,8 @@ description: CloudFront를 이용한 SSL 설정
 tags: ['AWS', 'CloudFront', 'SSL']
 ---
 
+# CloudFront를 이용한 SSL 설정
+
 ## 탄력적 IP 부여
 
 먼저 도메인을 연결할 인스턴스에 고정 아이피를 부여
