@@ -6,15 +6,7 @@ module.exports = {
   description: '또 하나 배워갑니다.',
   head: [['link', { rel: 'icon', href: '/logo.jpg' }]],
   themeConfig: {
-    sidebar: [
-      {
-        title: 'BOJ', // required
-        path: '/note/boj/', // optional, link of the title, which should be an absolute path and must exist
-        collapsable: false, // optional, defaults to true
-        sidebarDepth: 2, // optional, defaults to 1
-        children: ['/'],
-      },
-    ],
+    sidebar: [],
     nav: [
       { text: 'Home', link: '/' },
       { text: 'About', link: '/about/' },

@@ -1,15 +1,16 @@
 ---
-title: Library in MZC
+title: cheakbbang
 description: 회사에서 쓸 도서관리 프로그램 만들기
-tags: ["Typescript", "NestJS", "ToyProject"]
+tags: ['Typescript', 'NestJS', 'ToyProject']
 sidebar: auto
 ---
 
 # {{ $frontmatter.title }}
+
 ::: tip 목표
 {{ $frontmatter.description }}
 :::
-   
+
 ## 0. 기획
 
 회사에서 복지차원으로 구입해주는 도서들을 각자 신청하여 구매하다보니 어떤 책이 이미 존재하는지, 어떤 책이 누구에게 대여되고 있는지 파악이 어려웠다.
