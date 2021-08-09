@@ -43,9 +43,9 @@ module.exports = {
         ariaLabel: 'Code craft',
         items: [
           { text: 'Panopticon', link: '/craft/panopticon/' },
-          { text: 'AWSPricechecker', link: '/craft/aws-pricechecker/' },
-          { text: 'AWSRI-Watcher', link: '/craft/ri-watcher/' },
-          { text: 'AWSSSM-Watcher', link: '/craft/ssm-watcher/' },
+          { text: 'AWS Pricechecker', link: '/craft/aws-pricechecker/' },
+          { text: 'AWS RI-Watcher', link: '/craft/ri-watcher/' },
+          { text: 'AWS SSM-Watcher', link: '/craft/ssm-watcher/' },
           { text: 'Cheakbbang', link: '/craft/cheakbbang/' },
         ],
       },
