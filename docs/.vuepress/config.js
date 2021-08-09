@@ -7,9 +7,15 @@ module.exports = {
   description: '또 하나 배워갑니다.',
   head: [['link', { rel: 'icon', href: '/logo.jpg' }]],
   themeConfig: {
-    sidebar: {
-      '/note/boj/': ['', 'io', 'if'],
-    },
+    sidebar: [
+      {
+        title: 'BOJ', // required
+        path: '/note/boj/', // optional, link of the title, which should be an absolute path and must exist
+        collapsable: false, // optional, defaults to true
+        sidebarDepth: 1, // optional, defaults to 1
+        children: ['/'],
+      },
+    ],
     nav: [
       { text: 'Home', link: '/' },
       { text: 'About', link: '/about/' },
@@ -50,18 +56,3 @@ module.exports = {
     },
   },
 };
-
-function getSideBar(folder, title) {
-  const extension = ['.md'];
-
-  const files = fs
-    .readdirSync(path.join(`${__dirname}/../${folder}`))
-    .filter(
-      (item) =>
-        item.toLowerCase() != 'readme.md' &&
-        fs.statSync(path.join(`${__dirname}/../${folder}`, item)).isFile() &&
-        extension.includes(path.extname(item))
-    );
-
-  return [{ title: title, children: ['', ...files] }];
-}
