@@ -8,7 +8,7 @@ tags: ['AWS', 'Glue', 'Athena']
 
 # 1. 문제상황
 
-![~@img/glue-crawled-data-zeroRecord/_2020-09-07__12.04.04.png](~@img/glue-crawled-data-zeroRecord/_2020-09-07__12.04.04.png)
+![~@img/glue-crawled-data-zeroRecord/glue-crawled-data-zeroRecord_12.04.04.png](~@img/glue-crawled-data-zeroRecord/glue-crawled-data-zeroRecord_12.04.04.png)
 
 AWS Glue를 이용하여 S3의 데이터를 크롤링 하여 Athena 테이블을 생성시 데이터의 스키마는 제대로 로드됐으나, `Zero record` 를 반환하는 경우가 발생하였다.
 
@@ -24,33 +24,33 @@ AWS Glue를 이용하여 S3의 데이터를 크롤링 하여 Athena 테이블을
 
 ### 가. 크롤러 생성
 
-![~@img/glue-crawled-data-zeroRecord/_2020-09-07__10.20.44.png](~@img/glue-crawled-data-zeroRecord/_2020-09-07__10.20.44.png)
+![~@img/glue-crawled-data-zeroRecord/glue-crawled-data-zeroRecord_10.20.44.png](~@img/glue-crawled-data-zeroRecord/glue-crawled-data-zeroRecord_10.20.44.png)
 
-![~@img/glue-crawled-data-zeroRecord/_2020-09-07__10.20.51.png](~@img/glue-crawled-data-zeroRecord/_2020-09-07__10.20.51.png)
+![~@img/glue-crawled-data-zeroRecord/glue-crawled-data-zeroRecord_10.20.51.png](~@img/glue-crawled-data-zeroRecord/glue-crawled-data-zeroRecord_10.20.51.png)
 
-![~@img/glue-crawled-data-zeroRecord/_2020-09-07__10.21.10.png](~@img/glue-crawled-data-zeroRecord/_2020-09-07__10.21.10.png)
+![~@img/glue-crawled-data-zeroRecord/glue-crawled-data-zeroRecord_10.21.10.png](~@img/glue-crawled-data-zeroRecord/glue-crawled-data-zeroRecord_10.21.10.png)
 
-![~@img/glue-crawled-data-zeroRecord/_2020-09-07__10.21.19.png](~@img/glue-crawled-data-zeroRecord/_2020-09-07__10.21.19.png)
+![~@img/glue-crawled-data-zeroRecord/glue-crawled-data-zeroRecord_10.21.19.png](~@img/glue-crawled-data-zeroRecord/glue-crawled-data-zeroRecord_10.21.19.png)
 
 - 이렇게 특정 오브젝트를 선택하지 말고 상위 폴더 또는 버킷으로 지정
 - 이때 S3의 포함 경로를 내가 크롤링 하고 싶은 특정 오브젝트가 아닌 "경로"만 지정한다.
   - 경로를 지정할 때는 마지막에 `/` 슬래쉬로 꼭 닫아준다.
 
-![~@img/glue-crawled-data-zeroRecord/_2020-09-07__10.21.42.png](~@img/glue-crawled-data-zeroRecord/_2020-09-07__10.21.42.png)
+![~@img/glue-crawled-data-zeroRecord/glue-crawled-data-zeroRecord_10.21.42.png](~@img/glue-crawled-data-zeroRecord/glue-crawled-data-zeroRecord_10.21.42.png)
 
 - IAM 롤의 경우, Bucket 마다 새 역할을 부여하므로 기존에 썼던 IAM이 아니라, 새 버킷에는 새 IAM롤을 생성할 수 있도록 한다.
 
-![~@img/glue-crawled-data-zeroRecord/_2020-09-07__10.21.48.png](~@img/glue-crawled-data-zeroRecord/_2020-09-07__10.21.48.png)
+![~@img/glue-crawled-data-zeroRecord/glue-crawled-data-zeroRecord_10.21.48.png](~@img/glue-crawled-data-zeroRecord/glue-crawled-data-zeroRecord_10.21.48.png)
 
 - 일정은 원하는대로 지정
 
-![~@img/glue-crawled-data-zeroRecord/_2020-09-07__10.22.00.png](~@img/glue-crawled-data-zeroRecord/_2020-09-07__10.22.00.png)
+![~@img/glue-crawled-data-zeroRecord/glue-crawled-data-zeroRecord_10.22.00.png](~@img/glue-crawled-data-zeroRecord/glue-crawled-data-zeroRecord_10.22.00.png)
 
 - Athena의 어떤 데이터베이스에 테이블을 만들지 지정
 
 ### 나. Athena의 데이터베이스 및 테이블 확인
 
-![~@img/glue-crawled-data-zeroRecord/_2020-09-07__11.52.33.png](~@img/glue-crawled-data-zeroRecord/_2020-09-07__11.52.33.png)
+![~@img/glue-crawled-data-zeroRecord/glue-crawled-data-zeroRecord_11.52.33.png](~@img/glue-crawled-data-zeroRecord/glue-crawled-data-zeroRecord_11.52.33.png)
 
 ```sql
 CREATE EXTERNAL TABLE `nara`(

@@ -57,7 +57,7 @@ module.exports = {
     [
       '@vuepress/google-analytics',
       {
-        ga: '250310529',
+        ga: 'G-HY9BVBRNH5',
       },
     ],
   ],
@@ -67,17 +67,5 @@ module.exports = {
         '@img': path.join(__dirname, '../img'),
       },
     },
-  },
-  chainWebpack: (config, isServer) => {
-    config.module
-      .rule('vue')
-      .uses.store.get('vue-loader')
-      .store.get('options').transformAssetUrls = {
-      video: ['src', 'poster'],
-      source: 'src',
-      img: 'src',
-      image: ['xlink:href', 'href'],
-      a: 'href',
-    };
   },
 };

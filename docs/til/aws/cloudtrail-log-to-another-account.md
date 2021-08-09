@@ -16,22 +16,22 @@ tags: ['AWS', 'CloudTrail', 'S3']
 
 ## (1) S3 Bucket 생성하기
 
-![~@img/cloudtrail-log-to-another-account/_2020-03-04__10.18.07.png](~@img/cloudtrail-log-to-another-account/_2020-03-04__10.18.07.png)
+![~@img/cloudtrail-log-to-another-account/cloudtrail-log-to-another-account_10.18.07.png](~@img/cloudtrail-log-to-another-account/cloudtrail-log-to-another-account_10.18.07.png)
 
 - 로그를 쌓을 버킷을 생성한다.
 
-![~@img/cloudtrail-log-to-another-account/_2020-03-04__10.18.30.png](~@img/cloudtrail-log-to-another-account/_2020-03-04__10.18.30.png)
+![~@img/cloudtrail-log-to-another-account/cloudtrail-log-to-another-account_10.18.30.png](~@img/cloudtrail-log-to-another-account/cloudtrail-log-to-another-account_10.18.30.png)
 
 - `버전 관리` 부분을 체크한다.
 - 기타 다른 옵션에 대해 필요한 경우 체크한다.
 
-![~@img/cloudtrail-log-to-another-account/_2020-03-04__10.18.53.png](~@img/cloudtrail-log-to-another-account/_2020-03-04__10.18.53.png)
+![~@img/cloudtrail-log-to-another-account/cloudtrail-log-to-another-account_10.18.53.png](~@img/cloudtrail-log-to-another-account/cloudtrail-log-to-another-account_10.18.53.png)
 
 - 권한 설정은 이 이후에 세부적으로 진행할 것이기 때문에 일단은 `다음`을 눌러 버킷 생성을 진행한다.
 
 ## (2) Bucket에 권한 설정 하기
 
-![~@img/cloudtrail-log-to-another-account/_2020-03-04__10.42.44.png](~@img/cloudtrail-log-to-another-account/_2020-03-04__10.42.44.png)
+![~@img/cloudtrail-log-to-another-account/cloudtrail-log-to-another-account_10.42.44.png](~@img/cloudtrail-log-to-another-account/cloudtrail-log-to-another-account_10.42.44.png)
 
 - 1에서 생성한 Bucket의 `권한` → `버킷 정책` 에서 CloudTrail에 쓰기 권한을 줄 수 있는 정책을 작성한다.
   - 아래 양식 참고
@@ -75,17 +75,17 @@ tags: ['AWS', 'CloudTrail', 'S3']
 
 ## (1) CloudTrail 추적 생성하기
 
-![~@img/cloudtrail-log-to-another-account/_2020-03-04__11.04.31.png](~@img/cloudtrail-log-to-another-account/_2020-03-04__11.04.31.png)
+![~@img/cloudtrail-log-to-another-account/cloudtrail-log-to-another-account_11.04.31.png](~@img/cloudtrail-log-to-another-account/cloudtrail-log-to-another-account_11.04.31.png)
 
-![~@img/cloudtrail-log-to-another-account/_2020-03-04__11.04.43.png](~@img/cloudtrail-log-to-another-account/_2020-03-04__11.04.43.png)
+![~@img/cloudtrail-log-to-another-account/cloudtrail-log-to-another-account_11.04.43.png](~@img/cloudtrail-log-to-another-account/cloudtrail-log-to-another-account_11.04.43.png)
 
 - 1번 과정에서 생성한 Bucket을 지정. 위에서 접두사(Optional)를 지정했다면 이 또한 명시하여 설정한다.
 
-![~@img/cloudtrail-log-to-another-account/_2020-03-04__11.07.51.png](~@img/cloudtrail-log-to-another-account/_2020-03-04__11.07.51.png)
+![~@img/cloudtrail-log-to-another-account/cloudtrail-log-to-another-account_11.07.51.png](~@img/cloudtrail-log-to-another-account/cloudtrail-log-to-another-account_11.07.51.png)
 
 - 생성 완료. 몇 분 후 구성이 완료 되면 B계정 Bucket에 A계정의 CloudTrail Log가 쌓이게 된다.
 
-  ![~@img/cloudtrail-log-to-another-account/_2020-03-04__11.19.25.png](~@img/cloudtrail-log-to-another-account/_2020-03-04__11.19.25.png)
+  ![~@img/cloudtrail-log-to-another-account/cloudtrail-log-to-another-account_11.19.25.png](~@img/cloudtrail-log-to-another-account/cloudtrail-log-to-another-account_11.19.25.png)
 
 # 3. MFA 설정
 

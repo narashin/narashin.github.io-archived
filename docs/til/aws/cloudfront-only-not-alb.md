@@ -22,27 +22,27 @@ tags: ['AWS', 'ALB', 'CloudFront']
 
 ### CloudFront 설정
 
-![~@img/cloudfront-only-not-alb/_2019-11-19__3.16.33.png](~@img/cloudfront-only-not-alb/_2019-11-19__3.16.33.png)
+![~@img/cloudfront-only-not-alb/cloudfront-only-not-alb_3.16.33.png](~@img/cloudfront-only-not-alb/cloudfront-only-not-alb_3.16.33.png)
 
 - CloudFront Distribution → Origins and Origin Groups에서 설정을 원하는 Origin을 선택하여 **Edit** 클릭
 
-![~@img/cloudfront-only-not-alb/_2019-11-19__3.18.37.png](~@img/cloudfront-only-not-alb/_2019-11-19__3.18.37.png)
+![~@img/cloudfront-only-not-alb/cloudfront-only-not-alb_3.18.37.png](~@img/cloudfront-only-not-alb/cloudfront-only-not-alb_3.18.37.png)
 
 - 하단에 `Origin Custom Headers` 에 Custom Header Name과 Value 값을 임의로 설정한다.
 
 ### ELB 설정
 
-![~@img/cloudfront-only-not-alb/_2019-11-19__3.28.29.png](~@img/cloudfront-only-not-alb/_2019-11-19__3.28.29.png)
+![~@img/cloudfront-only-not-alb/cloudfront-only-not-alb_3.28.29.png](~@img/cloudfront-only-not-alb/cloudfront-only-not-alb_3.28.29.png)
 
 - CloudFront에 연결된 Origin ALB를 선택하여 리스너 탭에서 **규칙 보기/편집** 클릭
 
-![~@img/cloudfront-only-not-alb/_2019-11-19__3.32.52.png](~@img/cloudfront-only-not-alb/_2019-11-19__3.32.52.png)
+![~@img/cloudfront-only-not-alb/cloudfront-only-not-alb_3.32.52.png](~@img/cloudfront-only-not-alb/cloudfront-only-not-alb_3.32.52.png)
 
 - 상단의 탭에서 규칙을 추가(+ 버튼)하여 규칙을 추가한다.
   - **IF** `HTTP 헤더` 가 `X-CUSTOM-HEADER` / `rkskekfk` (CloudFront 에서 Origin Custom Header 로 설정한 값)
   - **THEN** 전달 `타겟` 설정
 
-![~@img/cloudfront-only-not-alb/_2019-11-19__3.38.01.png](~@img/cloudfront-only-not-alb/_2019-11-19__3.38.01.png)
+![~@img/cloudfront-only-not-alb/cloudfront-only-not-alb_3.38.01.png](~@img/cloudfront-only-not-alb/cloudfront-only-not-alb_3.38.01.png)
 
 - 기본적으로 존재하는 규칙은 삭제할 수 없다.
 - **THEN** 으로 그 외의 요청은 다 `403` 으로 보내게 설정해두었다.
@@ -51,11 +51,11 @@ tags: ['AWS', 'ALB', 'CloudFront']
 
 위의 설정 후 다시 CloudFront 접속 / ALB 직접 접속 한 결과
 
-![~@img/cloudfront-only-not-alb/_2019-11-19__3.40.27.png](~@img/cloudfront-only-not-alb/_2019-11-19__3.40.27.png)
+![~@img/cloudfront-only-not-alb/cloudfront-only-not-alb_3.40.27.png](~@img/cloudfront-only-not-alb/cloudfront-only-not-alb_3.40.27.png)
 
 - CloudFront 로 접속
 
-![~@img/cloudfront-only-not-alb/_2019-11-19__3.40.40.png](~@img/cloudfront-only-not-alb/_2019-11-19__3.40.40.png)
+![~@img/cloudfront-only-not-alb/cloudfront-only-not-alb_3.40.40.png](~@img/cloudfront-only-not-alb/cloudfront-only-not-alb_3.40.40.png)
 
 - ALB로 직접 접속
   - 403 반환

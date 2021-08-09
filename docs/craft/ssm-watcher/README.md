@@ -11,7 +11,7 @@ sidebar: auto
 {{ $frontmatter.description }}
 :::
 
-![~@img/ssm-watcher/_2021-05-12__4.21.16.png](~@img/ssm-watcher/_2021-05-12__4.21.16.png)
+![~@img/ssm-watcher/ssm-watcher_4.21.16.png](~@img/ssm-watcher/ssm-watcher_4.21.16.png)
 
 # 0. 목적
 
@@ -84,7 +84,7 @@ PROFILE: default # 사용할 AWS Profile (2에서 설정)
 $ sls deploy
 ```
 
-![~@img/ssm-watcher/_2021-05-13__1.15.08.png](~@img/ssm-watcher/_2021-05-13__1.15.08.png)
+![~@img/ssm-watcher/ssm-watcher_1.15.08.png](~@img/ssm-watcher/ssm-watcher_1.15.08.png)
 
 7. 세션 매니저를 통해 세션이 시작되면,
 

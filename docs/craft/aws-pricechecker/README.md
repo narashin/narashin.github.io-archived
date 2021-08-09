@@ -8,7 +8,7 @@ sidebar: auto
 # AWS Pricechecker - Serverless Architecture
 
 :::tip 코드
-코드는 회사 빌링 정보가 포함되어 있어 공개가 불가하다. 아쉽지만 아키텍처만 설명하겠다.
+코드는 회사 빌링 정보가 포함되어 있어 공개가 불가하다. 아쉽지만 아키텍처만 설명합니다.
 :::
 
 ## 0. 시나리오
@@ -39,7 +39,7 @@ AWS는 각종 서비스 및 리소스의 가격을 Price List API로 제공한�
 
 이를 SNS으로 구독하면 (1) 변경 될 때 또는 (2) 하루에 한 번 PriceList API를 받아볼 수 있다.
 
-![~@img/aws-pricechecker/_2020-10-10__8.38.30.png](~@img/aws-pricechecker/_2020-10-10__8.38.30.png)
+![~@img/aws-pricechecker/aws-pricechecker_8.38.30.png](~@img/aws-pricechecker/aws-pricechecker_8.38.30.png)
 
 - 반드시 미국 동부(버지니아 북부)로 리전을 선택할 것 `{ region : us-east-1 }`
 - 구독으로 기존 알림 ARN 참조하기
@@ -51,7 +51,7 @@ AWS는 각종 서비스 및 리소스의 가격을 Price List API로 제공한�
 
 ### (1) Fargate
 
-![~@img/aws-pricechecker/_2020-10-11__5.59.52.png](~@img/aws-pricechecker/_2020-10-11__5.59.52.png)
+![~@img/aws-pricechecker/aws-pricechecker_5.59.52.png](~@img/aws-pricechecker/aws-pricechecker_5.59.52.png)
 
 - 먼저 클러스터를 생성한다
   - 클러스터 이름, VPC 새 생성 여부 등을 설정
@@ -89,7 +89,7 @@ exports.handler = async (event) => {
 
 [RunTask](https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html)
 
-![~@img/aws-pricechecker/_2020-10-12__10.51.31.png](~@img/aws-pricechecker/_2020-10-12__10.51.31.png)
+![~@img/aws-pricechecker/aws-pricechecker_10.51.31.png](~@img/aws-pricechecker/aws-pricechecker_10.51.31.png)
 
 ## 3. Cloudwatch로 작업완료를 파악하여 Slack으로 알려주기
 
@@ -98,13 +98,13 @@ exports.handler = async (event) => {
 
 ### (1) Cloudwatch Events
 
-![~@img/aws-pricechecker/_2020-10-12__10.34.21.png](~@img/aws-pricechecker/_2020-10-12__10.34.21.png)
+![~@img/aws-pricechecker/aws-pricechecker_10.34.21.png](~@img/aws-pricechecker/aws-pricechecker_10.34.21.png)
 
 - Cloudwatch Event → 규칙 에서 이벤트 패턴을 설정한다.
   - ecs, Task State Change, STOPPED, (Essential container in task exited)
 
 ### (2) Slack
 
-![~@img/aws-pricechecker/_2020-10-12__10.51.55.png](~@img/aws-pricechecker/_2020-10-12__10.51.55.png)
+![~@img/aws-pricechecker/aws-pricechecker_10.51.55.png](~@img/aws-pricechecker/aws-pricechecker_10.51.55.png)
 
 Slack Webhook을 이용하여 작업 완료 Message를 보낸다.
