@@ -20,8 +20,8 @@ module.exports = {
         collapsable: false, // optional, defaults to true
         sidebarDepth: 1, // optional, defaults to 1
         children: [
-          ['/note/boj/io', 'IO'],
-          ['/note/boj/if', 'IF'],
+          ['/note/boj/io.md', 'IO'],
+          ['/note/boj/if.md', 'IF'],
         ],
       },
     ],
