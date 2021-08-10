@@ -7,10 +7,10 @@ module.exports = {
   head: [['link', { rel: 'icon', href: '/logo.jpg' }]],
   themeConfig: {
     sidebar: {
-      '/til/boj/': [
+      '/til/ps/': [
         {
-          title: 'BOJ',
-          children: getChildren('./docs/til/boj/'),
+          title: 'PS',
+          children: getChildren('./docs/til/ps/'),
         },
       ],
       '/til/aws/': [
@@ -40,8 +40,9 @@ module.exports = {
         ariaLabel: 'TIL',
         items: [
           { text: 'AWS', link: '/til/aws/' },
-          { text: 'BOJ', link: '/til/boj/' },
-          { text: 'Computer Science', link: '/til/cs/' },
+          { text: 'PS', link: '/til/ps/' },
+          { text: 'Note', link: '/til/note/' },
+          { text: 'CS', link: '/til/cs/' },
         ],
       },
       {
