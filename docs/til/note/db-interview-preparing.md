@@ -1,6 +1,6 @@
 ---
-title: 개발 면접 준비
-description: 개발 면접 준비
+title: DB 면접 준비
+description: DB 면접 준비
 sidebarDepth: 2
 ---
 
