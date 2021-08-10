@@ -6,9 +6,42 @@ sidebarDepth: 2
 
 ## 1. HTTP란?
 
+WWW상에서 정보를 주고 받을 수 있는 프로토콜. 주로 TCP를 사용하며, 80번 포트를 사용한다.
+HTTP는 클라이언트와 서버 사이에 이루어지는 요청/응답 프로토콜이다. 주로 HTML 문서를 주고 받는 데에 쓰인다. Stateless.
+
 ## 2. HTTPS란?
 
+HTTPS는 HTTP의 보안이 강화된 버전. 소켓 통신에서 일반 텍스트를 이용하는 대신에, SSL이다 TLS 프로토콜을 통해 세션 데이터를 암호화 한다. 기본 TCP/IP 포트는 443.
+
 ## 3. HTTP1.1과 2.0의 차이
+
+![1.1과2.0차이](https://miro.medium.com/max/1328/1*rf2AnDQyHfGO_ThYfb-hWA.png)
+
+HTTP1.1은 연결당 하나의 요청과 응답을 처리하기 때문에 동시 전송 문제와 다수의 리소스를 처리하는 데에 속도, 성능 이슈가 있었음.
+
+HTTP2.0은 한 커넥션에 여러개 메시지를 동시에 주고 받을 수 있으며, 요청 리소스간 의존 관계를 설정할 수 있고, HTML문서상 필요한 리로스를 클라이언트 요청 없이 보내줄 수 있으며, Header정보를 HPACK압축 방식을 이용하여 압축 전송 하여 성능과 속도가 크게 향상.
+
+## 4. HTTP 응답 코드
+
+1XX Infomational
+2XX Success
+3XX Redirection
+4XX Client Error
+5XX Server Error
+
+## 5. Header
+
+인증 Authorization
+캐싱 Age, Expires
+조건부 Etag, Last-Modified
+연결 관리 Connection, Keep-Alive
+컨텐츠 협상 Accept,
+쿠키 Cookie, Set-Cookie
+CORS Access-Control-Allow-Origin, Orgin, Access-Control-Request-Headers, Access-Control-Request-Method
+메시지 바디 정보 Content-Type
+프록시 Forwarded
+요청 컨텍스트 From, Host, Referer, User-Agent
+응답 컨텍스트 Allow, Server
 
 ## 4. CRUD에 대응되는 Method
 
@@ -20,7 +53,27 @@ GET, POST, PUT, DELETE
 
 GET, HEAD와 같이 서버측의 상태 정보를 변경하지 않는 메소드
 
-## 6. Session과 Cookie
+## 6. Stateless와 Stateful
+
+### Stateless
+
+대표적인 Stateless 프로토콜로는 UDP와 HTTP가 있다.
+세션 상태에 관계 없이 단순히 데이터그램을 source에서 destination 쪽으로 전송한다.
+Client가 송신하려 했던 모든 데이터가 server쪽에 수신되었는지 확인하지 않는다. 따라서 server쪽은 Client와의 세션 정보를 전혀 저장하지 않는다.
+
+- 세션 정보를 server에 저장하지 않음. 세션 상태에 무관한 응답
+  - 따라서 스케일링에 용이하다
+
+### Stateful
+
+대표적인 Stateful 프로토콜로는 TCP가 있다.
+TCP의 3way handshaking과정을 생각해보면, Server와 Client는 3way handshaking 과정에서 SYN과 SYN/ACK을 주고 받으며 양단간 세션 상태를 정해진 '상태'로 만든다.
+세션 상태가 정해지면 client와 server는 데이터를 주고 받을 수 있다.
+TCP는 세션 상태에 따라 server 응답이 달라지는 stateful 프로토콜이다.
+
+- 세션 정보를 server에 저장, 세션 상태에 따른 응답 을 만족하도록 설계된 서비스 구조
+
+## 7. Session과 Cookie
 
 HTTP 프로토콜의 특징이자 약점을 보완하기 위해 사용된다.
 
@@ -66,3 +119,41 @@ HTTP에서 클라이언트의 상태 정보를 클라이언트 PC에 저장하�
 3. 생성한 쿠키에 정보에 담아 HTTP 화면을 돌려줄 때, 같이 클라이언트에 반환
 4. 넘겨 받은 쿠키는 클라이언트가 로컬 PC에 저장하여 가지고 있다가, 다시 서버가 요청할 때 요청과 함께 쿠키를 전송
 5. 동일 사이트 재방문시 클라이언트 PC에 해당 쿠키가 있는 경우, 요청 페이지와 함께 쿠키를 전송
+
+## 8. Request/Response
+
+### Request
+
+HTTP Request는 서버에서 데이터를 처리하기 위한 또는 가져오기 위한 메시지이다.
+
+1. Start Line
+
+- HTTP Method
+- Request Target
+- HTTP Version
+
+2. Header
+
+- Key: value
+
+3. Body
+
+- 해당 요청의 실제 내용
+
+### Response
+
+1. Start Line
+
+- HTTP Version
+- Status Code
+- Status Text
+
+2. Headers
+
+3. Body
+
+## 9. Multipart란
+
+MIME 타입 중 하나로서, 웹 클라이언트가 요청을 보낼 때, http 프로토콜의 바디 부분에 데이터를 여러부분으로 나눠서 보내는 것.
+
+## 10. 로그인 프로세스
