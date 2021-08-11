@@ -1,12 +1,14 @@
 ---
-title: NodeJS 면접 준비
-description: NodeJS 면접 준비
+title: 면접 준비 - NodeJS
+description: 면접 준비 - NodeJS
 sidebarDepth: 2
 ---
 
 # NodeJS 면접 준비
 
 ## 1. NodeJS란?
+
+Chrome의 V8엔진을 이용하여 브라우저에서 JavaScript를 해석하듯이 서버에서 JavaScript를 동작할 수 있도록 하는 환경(플랫폼)
 
 Node.js는 클라이언트 브라우저 외부에서 웹 애플리케이션을 실행하기 위한 오픈소스 크로스 플랫폼 Javascript 런타임 환경 및 라이브러리이다. 서버 측 웹 응용 프로그램을 만드는 데 사용된다.
 
@@ -195,7 +197,8 @@ fs.open(path, flags[, mode], callback)
 
 ## 31. 콜백지옥이란?
 
-비동기 논리의 부적절한 구현으로 인해 콜백 지옥이 발생한다. 중첩되어 가독성이 떨어지며 관리하기 어렵다.
+비동기 논리의 부적절한 구현으로 인해 콜백 지옥이 발생한다. 중첩되어 가독성이 떨어지며 관리하기 어렵다.  
+그래서 `Promise`를 쓰게 됨
 
 ## 32. 테스트 피라미드란?
 
@@ -233,4 +236,98 @@ MongoClient.connect(url, function(err, db) {
 });
 ```
 
-### 36. NODE_ENV의 목적
+## 36. NODE_ENV의 목적
+
+## 37. ES5와 ES6 차이
+
+### `let`, `const` 키워드 추가
+
+함수레벨 스코프를 따르던 `var` 키워드 외에 블록레벨 스코프를 따르는 `let`, `const` 키워드가 추가되었다.
+
+- `let` : 재할당 가능
+- `const` : 재할당 불가능
+
+- 블록레벨 스코프 : 모든 코드 블록 내에서 선언된 변수는 코드 블록 내에서만 유효하고 코드 블록 외에서는 참조 불가
+- 함수레벨 스코프 : 함수 내에서 선언된 변수는 함수 내에서만 유효하며 함수 외부에서는 참조 불가. 함수 내, 지역변수. 함수 밖, 전역 변수.
+
+### Arrow function 추가
+
+this, prototype, arguments 세가지가 없으며. 익명 함수로만 사용할 수 있다.
+
+1. `this`  
+   일반 함수는 호출할 때 어떻게 호출되는지에 따라 this에 바인딩 될 객체가 동적으로 결정되지만, 애로우 펑션은 **선언** 할 때 this에 바인딩될 객체가 정적으로 결정된다. 애로우 펑션의 this는 항상 상위 scope의 this를 의미한다. 자신만의 this를 새엇ㅇ하지 않는 익명함수이다.(Lexical this)
+
+2. prototype
+   생성자 함수로 사용할 수 없다. new 사용시 오류 발생.
+
+3. arguments
+   매개변수를 지정하지 않아도 arguments 프로퍼티가 함수에 자동으로 생성되어 사용 가능 했었으나, arguments가 없어졌다.(대신 args가 생김.)
+
+4. 호이스팅(Hoisting) 될 수 없다
+   코드에 선언된 변수 및 함수를 코드 상단으로 끌어 올리는 것.  
+   (함수 내에서 선언한 함수 범위의 변수는 해당 함수 최상위로 호이스팅 됨. 하지만 애로우펑션은 불가.)
+
+#### Arrow Function을 사용해선 안 되는 경우
+
+1. 객체의 메소드에서 사용 시
+
+```js
+const person = {
+  name: 'Nara',
+  sayHello: () => console.log(`Hi ${this.name}`),
+};
+
+person.sayHello(); // Hi undefined
+```
+
+상위 scope의 this를 계승하기 때문에 이 경우 전역 객체를 가리키게 됨.
+
+2. `addEventListener`의 콜백함수
+
+### Default parameter 추가
+
+인자가 없거나 `undefined` 인 경우에 들어갈 기본값을 설정해놓아야 한다
+ES6에서는 기본 매개 변수를 제공하고, 매개 변수가 없을 경우 지정한 기본값을 인자로 전달한다.
+
+```js
+function sayHello(name = 'student', greeting = 'Hi') {
+  return `${greeting} ${name}!`;
+}
+sayHello(); // Hi Student!
+```
+
+### Templete literal 추가
+
+백틱으로 문자열과 값을 간단하게 사용 가능 오예!
+
+#### multi-line string
+
+그렇기 때문에 백틱으로 멀티라인 스트링도 쉽게 다룰 수 있게 됨
+
+### Destructuring Assignment 비구조화 할당
+
+배열이나 객체의 요소를 해체하여 별개의 변수로 추출할 수 있다.
+
+```js
+var { first, second } = $('body').data();
+
+[a, b, ...rest] = [1, 2, 3, 4, 5];
+console.log(rest) = [3, 4, 5];
+```
+
+### 클래스
+
+`new` 키워드로 Class 생성가능. `constructor()` 생성자 함수로 속성 설정 가능.  
+메서드 정의, 상속, 부모 메서드 호출 가능한 Class를 사용할 수 있다.  
+프로토 타입과 클래스가 다르지 않다. 즉, 프로토 타입으로 상속을 구현했을 경우 클래스 문법을 사용할 수 있다.
+
+### 모듈
+
+재사용하기 위한 코드 조각들을 의미.
+`export`, `import`로 모듈을 내보내고 불러올 수 있다.
+
+### Promise 프로미스
+
+비동기를 위한 객체, 어떤 일의 진행 상태를 나타내는 객체로 상태와 값이라는 속성을 갖고 있다.
+`resolve`, `reject` 를 호출하여 진행 상태를 결정할 수 있다. promise의 값은 `resolve`, `reject`를 호출할 때 넘긴 인자에 의해 결정된다.  
+`then()`, `catch()` 는 일의 진행 상태를 나타내는 객체로, promise가 fullfilled일 때 `then()`에 등록된 함수를 실행하고 promise가 `rejected` 일 때 아무것도 하지 않는다.

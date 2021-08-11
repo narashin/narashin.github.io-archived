@@ -1,6 +1,6 @@
 ---
-title: HTTP 면접 준비
-description: HTTP 면접 준비
+title: 면접 준비 - HTTP
+description: 면접 준비 - HTTP
 sidebarDepth: 2
 ---
 

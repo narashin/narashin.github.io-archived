@@ -1,6 +1,6 @@
 ---
-title: Network 면접 준비
-description: Network 면접 준비
+title: 면접 준비 - Network
+description: 면접 준비 - Network
 sidebarDepth: 2
 ---
 
