@@ -157,3 +157,11 @@ HTTP Request는 서버에서 데이터를 처리하기 위한 또는 가져오�
 MIME 타입 중 하나로서, 웹 클라이언트가 요청을 보낼 때, http 프로토콜의 바디 부분에 데이터를 여러부분으로 나눠서 보내는 것.
 
 ## 10. 로그인 프로세스
+
+ID 평문, PW 비대칭 암호화 알고리즘을 써서 해싱처리. sha256.
+form id, pw
+http post -> content type x-form-encoded
+서버는 id를 기준으로 db . 유니크키로
+pw는 body로 받은 패스워
+애플리케이션에서 해싱 암호화 = 암호 패싱 된거 확인
+retry count
