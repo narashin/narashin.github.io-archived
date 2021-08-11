@@ -331,3 +331,44 @@ console.log(rest) = [3, 4, 5];
 비동기를 위한 객체, 어떤 일의 진행 상태를 나타내는 객체로 상태와 값이라는 속성을 갖고 있다.
 `resolve`, `reject` 를 호출하여 진행 상태를 결정할 수 있다. promise의 값은 `resolve`, `reject`를 호출할 때 넘긴 인자에 의해 결정된다.  
 `then()`, `catch()` 는 일의 진행 상태를 나타내는 객체로, promise가 fullfilled일 때 `then()`에 등록된 함수를 실행하고 promise가 `rejected` 일 때 아무것도 하지 않는다.
+
+## 38. Closure 클로저 함수
+
+리턴된 함수에서 자신을 만들어준 함수 내의 변수에 접근하는 것.  
+함수 안에서 새로운 함수를 만들어서 변환하는 경우에는 예외적으로 변수 접근을 허용한다.
+
+클로저는 자바스크립트 고유의 개념이 아니라 함수를 일급 객체로 취급하는 함수형 프로그래밍 언어(Functional Programming language: 얼랭(Erlnag), 스칼라(Scala), 하스켈(Haskell), 리스프(Lisp)…)에서 사용되는 중요한 특성이다.
+
+클로저는 반환된 내부함수가 자신이 선언됐을 때의 환경(Lexical environment)인 스코프를 기억하여 자신이 선언됐을 때의 환경(스코프) 밖에서 호출되어도 그 환경(스코프)에 접근할 수 있는 함수
+
+```js
+function add(a, b, callback){
+  var result = a+b;
+  callback(result);
+
+  var historyCount = 0;
+  var history = function(){
+    historyCount++;
+    return count+ ":" + a + "+" + b + "=" +result;
+  };
+  return history;
+}
+
+var history = add(10,20, function(result){
+  console.log("더하기 결과" + result);
+});
+
+// 자신을 만들어준 함수 내의 변수에 접근하기
+console.log("결과값": history());
+console.log("결과값": history());
+console.log("결과값": history());
+```
+
+- 상태 유지 : 클로저가 가장 유용하게 사용되는 상황은 현재 상태를 기억하고 변경된 최신 상태를 유지하는 것이다.
+- 전역 변수의 사용 억제
+- 정보의 은닉
+- 내부함수가 참조하는 외부함수의 객체들을 더이상 사용하지 않아도 가비지 콜렉터가 수집하지 못하므로 메모리 누수에 조심해야한다.
+
+## 39. Lexical scoping 렉시컬 스코핑
+
+스코프는 함수를 호출할 때가 아니라 함수를 어디에 선언하였는지에 따라 결정된다. 이를 렉시컬 스코핑(Lexical scoping)라 한다. 위 예제의 함수 innerFunc는 함수 outerFunc의 내부에서 선언되었기 때문에 함수 innerFunc의 상위 스코프는 함수 outerFunc이다. 함수 innerFunc가 전역에 선언되었다면 함수 innerFunc의 상위 스코프는 전역 스코프가 된다.

@@ -23,24 +23,24 @@ HTTP2.0은 한 커넥션에 여러개 메시지를 동시에 주고 받을 수 �
 
 ## 4. HTTP 응답 코드
 
-1XX Infomational
-2XX Success
-3XX Redirection
-4XX Client Error
+1XX Infomational  
+2XX Success  
+3XX Redirection  
+4XX Client Error  
 5XX Server Error
 
 ## 5. Header
 
-인증 Authorization
-캐싱 Age, Expires
-조건부 Etag, Last-Modified
-연결 관리 Connection, Keep-Alive
-컨텐츠 협상 Accept,
-쿠키 Cookie, Set-Cookie
-CORS Access-Control-Allow-Origin, Orgin, Access-Control-Request-Headers, Access-Control-Request-Method
-메시지 바디 정보 Content-Type
-프록시 Forwarded
-요청 컨텍스트 From, Host, Referer, User-Agent
+인증 Authorization  
+캐싱 Age, Expires  
+조건부 Etag, Last-Modified  
+연결 관리 Connection, Keep-Alive  
+컨텐츠 협상 Accept,  
+쿠키 Cookie, Set-Cookie  
+CORS Access-Control-Allow-Origin, Orgin, Access-Control-Request-Headers, Access-Control-Request-Method  
+메시지 바디 정보 Content-Type  
+프록시 Forwarded  
+요청 컨텍스트 From, Host, Referer, User-Agent  
 응답 컨텍스트 Allow, Server
 
 ## 4. CRUD에 대응되는 Method
@@ -57,8 +57,8 @@ GET, HEAD와 같이 서버측의 상태 정보를 변경하지 않는 메소드
 
 ### Stateless
 
-대표적인 Stateless 프로토콜로는 UDP와 HTTP가 있다.
-세션 상태에 관계 없이 단순히 데이터그램을 source에서 destination 쪽으로 전송한다.
+대표적인 Stateless 프로토콜로는 UDP와 HTTP가 있다.  
+세션 상태에 관계 없이 단순히 데이터그램을 source에서 destination 쪽으로 전송한다.  
 Client가 송신하려 했던 모든 데이터가 server쪽에 수신되었는지 확인하지 않는다. 따라서 server쪽은 Client와의 세션 정보를 전혀 저장하지 않는다.
 
 - 세션 정보를 server에 저장하지 않음. 세션 상태에 무관한 응답
@@ -66,9 +66,9 @@ Client가 송신하려 했던 모든 데이터가 server쪽에 수신되었는�
 
 ### Stateful
 
-대표적인 Stateful 프로토콜로는 TCP가 있다.
-TCP의 3way handshaking과정을 생각해보면, Server와 Client는 3way handshaking 과정에서 SYN과 SYN/ACK을 주고 받으며 양단간 세션 상태를 정해진 '상태'로 만든다.
-세션 상태가 정해지면 client와 server는 데이터를 주고 받을 수 있다.
+대표적인 Stateful 프로토콜로는 TCP가 있다.  
+TCP의 3way handshaking과정을 생각해보면, Server와 Client는 3way handshaking 과정에서 SYN과 SYN/ACK을 주고 받으며 양단간 세션 상태를 정해진 '상태'로 만든다.  
+세션 상태가 정해지면 client와 server는 데이터를 주고 받을 수 있다.  
 TCP는 세션 상태에 따라 server 응답이 달라지는 stateful 프로토콜이다.
 
 - 세션 정보를 server에 저장, 세션 상태에 따른 응답 을 만족하도록 설계된 서비스 구조
@@ -104,7 +104,7 @@ HTTP 프로토콜의 특징이자 약점을 보완하기 위해 사용된다.
 
 ### Cookie
 
-사용자가 어떠한 웹 사이트를 방문할 경우, 그 사이트가 사용하고 있는 서버에서 사용자의 컴퓨터에 저장하는 작은 기록 정보 파일.
+사용자가 어떠한 웹 사이트를 방문할 경우, 그 사이트가 사용하고 있는 서버에서 사용자의 컴퓨터에 저장하는 작은 기록 정보 파일.  
 HTTP에서 클라이언트의 상태 정보를 클라이언트 PC에 저장하였다가 필요시 정보를 참조하거나 재사용 가능.
 
 - 이름, 값, 만료일(저장 기간), 경로 정보로 구성
