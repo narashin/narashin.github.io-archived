@@ -44,7 +44,8 @@ Node.js는 비동기처리를 위한 싱글 스레드를 갖는다. 일반적인
 
 ## 5. Callback in Node.js
 
-콜백함수는 주어진 작업 후에 호출 됩니다. 그동안 다른 코드를 실행할 수 있으며 블로킹을 방지한다. 비동기 플랫폼이기 때문에 Node.js는 콜백에 크게 의존한다. Node의 모든 API는 콜백을 지원하도록 작성되었습니다.
+콜백함수는 주어진 작업 후에 호출 됩니다. 그동안 다른 코드를 실행할 수 있으며 블로킹을 방지한다. 비동기 플랫폼이기 때문에 Node.js는 콜백에 크게 의존한다. Node의 모든 API는 콜백을 지원하도록 작성되었습니다.  
+비동기 처리 방식의 문제점을 해결하기 위해 특정 시점에서 호출이 되도록 사용하는 함수.
 
 ## 6. I/O
 
@@ -65,6 +66,11 @@ NPM은 Node.js의 모든 패키지와 모듈을 관리하는 Node Package Manage
 
 - node.js 패키지/모듈에 대한 온라인 리포지토리 제공
 - Node.js 패키지를 설치하고 Node.js 버전 및 종속성을 관리하는 CLI를 제공
+
+### package-lock.json
+
+package.json 파일의 의존성 선언에는 Version range가 사용되는데, 특정 버전이 아니라 버전의 범위를 의미한다.
+package-lock.json의 경우 특정 버전을 명확하게 선언하므로서, 의존성 트리에 대한 정확한 정보를 가지고 있게 됨. 안정성을 유지하는 데 도움을 준다.
 
 ## 9. 모듈
 
@@ -164,6 +170,29 @@ async function foo(req, res) {
   }
 }
 ```
+
+### Async / Await
+
+ES8에 등장!
+
+[자바스크립트 비동기통신 Callback, Promise, Async/Await 이해하기](https://techlog.io/Javascript/General/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%B9%84%EB%8F%99%EA%B8%B0%ED%86%B5%EC%8B%A0-callback-promise-async-await-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0/)
+
+### Async / Await이 Callback이나 Promise보다 나은 점
+
+- 자바와 같이 동기적 코드 흐름으로 개발이 가능하다.
+- 코드가 간결해지고, 가독성이 높아진다.
+- 응답데이터로 들어오는 변수(관례적으로 많이 사용되는 data, response)를 없앨 수 있다.
+- try / catch로 에러를 핸들링할 수 있다.
+- error가 어디서 발생했는지 알기 쉽다.
+
+### Promise 와 async/await 의 차이점
+
+- 에러 핸들링
+  - Promise 를 활용할 시에는 .catch() 문을 통해 에러 핸들링이 가능하지만, async/await 은 에러 핸들링 할 수 있는 기능이 없어 try-catch() 문을 활용해야 한다
+- 코드 가독성
+  - Promise의 .then() 지옥의 가능성
+  - 코드가 길어지면 길어질수록, async/await 를 활용한 코드가 가독성이 좋다.
+  - async/await 은 비동기 코드가 동기 코드처럼 읽히게 해준다. 코드 흐름을 이해 하기 쉽다.
 
 ### 23. module.exports의 목적
 
@@ -376,3 +405,6 @@ console.log("결과값": history());
 ## 40. 이벤트 루프
 
 [로우 레벨로 살펴보는 Node.js 이벤트 루프](https://evan-moon.github.io/2019/08/01/nodejs-event-loop-workflow/)
+[Node.js 이벤트 루프, 타이머, process.nextTick()](https://nodejs.org/ko/docs/guides/event-loop-timers-and-nexttick/)
+
+다음은 Node.JS의 Event Loop 동작 방식이다. Node.JS의 이벤트 루프는 시스템 커널에 Task를 Offloading함으로써 JavaScript의 Single Thread라는 약점을 개선하는 방식으로 사용된다.
