@@ -49,6 +49,7 @@ module.exports = {
         text: 'Craft',
         ariaLabel: 'Code craft',
         items: [
+          { text: 'Efish', link: '/craft/efish/' },
           { text: 'Panopticon', link: '/craft/panopticon/' },
           { text: 'AWS Pricechecker', link: '/craft/aws-pricechecker/' },
           { text: 'AWS RI-Watcher', link: '/craft/ri-watcher/' },
