@@ -358,3 +358,17 @@ Model, View, Controller
 ## CI/CD
 
 - AWS CodePipeline을 통해 경험
+
+## Python vs. Node.js
+
+Python은 프로그래밍 언어입니다. Node.js는 그렇지 않습니다. 여기서 언어는 JavaScript이고 Node.js는 JavaScript용 런타임 환경입니다.
+
+Python과 Node.js의 주요 차이점은 Node.js로 작성할 때 프론트엔드와 백엔드 모두에 동일한 언어를 사용한다는 것입니다.
+
+### 트렌드 기술
+
+Python은 최신 기술 , 특히 기계 학습에 완벽하게 적합합니다 .
+
+Python은 데이터 과학 세계의 주요 업체이며 ML을 지원하는 여러 시도 및 테스트를 거친 라이브러리를 제공 합니다.
+JavaScript보다 Python에 정통한 기계 학습 전문가 를 찾는 것이 더 쉽습니다 .  
+더 가볍고 더 작은 Python 버전인 MicroPython 은 더 적은 전력과 더 적은 리소스로 실행할 수 있으므로 IoT 장치에 완벽하게 적합합니다(JavaScript에는 Espurino 형식의 동등한 기능이 있지만 널리 사용되지는 않음).
