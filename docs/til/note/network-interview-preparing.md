@@ -106,7 +106,7 @@ Private Key를 이용하여 복호화 해야하기 때문에 Public key만으로
 1. 클라이언트가 접속한 서버가 신뢰할 수 있는 서버임을 보증
 2. SSL 통신에 사용할 공개키 제공
 
-![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fpankv%2FbtqKGk67GtD%2Fg06Vm0pfdVgHgHmrx8UKk0%2Fimg.png)
+![](~@img/network-interview-preparing/tls-handshake.png)
 
 1. Client Hello - 클라이언트가 서버에게 다음과 같은 정보를 전송한다
 
