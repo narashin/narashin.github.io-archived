@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>프로세스 스케쥴링 | Today Nara Learned</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <link rel="icon" href="/logo.jpg">
+    <meta name="description" content="배치처리 시스템, 시분할 시스템, 멀티태스킹">
+    
+    <link rel="preload" href="/assets/css/0.styles.b1e54e08.css" as="style"><link rel="preload" href="/assets/js/app.c8ae02a0.js" as="script"><link rel="preload" href="/assets/js/2.f79bbf3a.js" as="script"><link rel="preload" href="/assets/js/19.25ed128a.js" as="script"><link rel="prefetch" href="/assets/js/10.e8007c8e.js"><link rel="prefetch" href="/assets/js/11.a3362abd.js"><link rel="prefetch" href="/assets/js/12.beb64c4a.js"><link rel="prefetch" href="/assets/js/13.c26e2570.js"><link rel="prefetch" href="/assets/js/14.70d5ef49.js"><link rel="prefetch" href="/assets/js/15.9d6b6b4d.js"><link rel="prefetch" href="/assets/js/16.c5696fe6.js"><link rel="prefetch" href="/assets/js/17.673e0b3a.js"><link rel="prefetch" href="/assets/js/18.e89a1df4.js"><link rel="prefetch" href="/assets/js/20.bdd07d61.js"><link rel="prefetch" href="/assets/js/21.b032316b.js"><link rel="prefetch" href="/assets/js/22.5db2b5eb.js"><link rel="prefetch" href="/assets/js/23.c64ebf8a.js"><link rel="prefetch" href="/assets/js/24.da3d9e39.js"><link rel="prefetch" href="/assets/js/25.1a5d3862.js"><link rel="prefetch" href="/assets/js/26.db147395.js"><link rel="prefetch" href="/assets/js/27.16668576.js"><link rel="prefetch" href="/assets/js/28.14676021.js"><link rel="prefetch" href="/assets/js/29.5b8b41c3.js"><link rel="prefetch" href="/assets/js/3.0826a943.js"><link rel="prefetch" href="/assets/js/30.b37df3f3.js"><link rel="prefetch" href="/assets/js/31.b0bd1866.js"><link rel="prefetch" href="/assets/js/32.e06ca9a2.js"><link rel="prefetch" href="/assets/js/33.7d94da4a.js"><link rel="prefetch" href="/assets/js/34.193eecd9.js"><link rel="prefetch" href="/assets/js/35.446ffa6a.js"><link rel="prefetch" href="/assets/js/36.3f28f265.js"><link rel="prefetch" href="/assets/js/37.17e71468.js"><link rel="prefetch" href="/assets/js/38.052b211a.js"><link rel="prefetch" href="/assets/js/39.b8c9f7b4.js"><link rel="prefetch" href="/assets/js/4.4990c499.js"><link rel="prefetch" href="/assets/js/40.b00876ae.js"><link rel="prefetch" href="/assets/js/41.df94044f.js"><link rel="prefetch" href="/assets/js/42.3acc2a73.js"><link rel="prefetch" href="/assets/js/43.825368ff.js"><link rel="prefetch" href="/assets/js/44.e3e822f4.js"><link rel="prefetch" href="/assets/js/45.6b80e96d.js"><link rel="prefetch" href="/assets/js/46.5b3200a4.js"><link rel="prefetch" href="/assets/js/47.7b5e8c9a.js"><link rel="prefetch" href="/assets/js/48.6934fa29.js"><link rel="prefetch" href="/assets/js/49.05a23689.js"><link rel="prefetch" href="/assets/js/5.ffb4e00a.js"><link rel="prefetch" href="/assets/js/50.65a2c79c.js"><link rel="prefetch" href="/assets/js/51.38d99bc3.js"><link rel="prefetch" href="/assets/js/52.0bd4cd92.js"><link rel="prefetch" href="/assets/js/53.49715ae7.js"><link rel="prefetch" href="/assets/js/54.4912587d.js"><link rel="prefetch" href="/assets/js/55.2b9aab8f.js"><link rel="prefetch" href="/assets/js/56.5ee58297.js"><link rel="prefetch" href="/assets/js/57.37fde3b6.js"><link rel="prefetch" href="/assets/js/58.c378c819.js"><link rel="prefetch" href="/assets/js/59.65a315d6.js"><link rel="prefetch" href="/assets/js/6.c4301fc9.js"><link rel="prefetch" href="/assets/js/60.8f12aee2.js"><link rel="prefetch" href="/assets/js/61.ee8e6fe4.js"><link rel="prefetch" href="/assets/js/7.6e7ea4d8.js"><link rel="prefetch" href="/assets/js/8.d66746cc.js"><link rel="prefetch" href="/assets/js/9.ab76366d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b1e54e08.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Today Nara Learned</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  About
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="TIL" class="dropdown-title"><span class="title">TIL</span> <span class="arrow down"></span></button> <button type="button" aria-label="TIL" class="mobile-dropdown-title"><span class="title">TIL</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/til/aws/" class="nav-link">
+  AWS
+</a></li><li class="dropdown-item"><!----> <a href="/til/ps/" class="nav-link">
+  PS
+</a></li><li class="dropdown-item"><!----> <a href="/til/cs/" class="nav-link router-link-active">
+  CS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Code craft" class="dropdown-title"><span class="title">Craft</span> <span class="arrow down"></span></button> <button type="button" aria-label="Code craft" class="mobile-dropdown-title"><span class="title">Craft</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/craft/efish/" class="nav-link">
+  Efish
+</a></li><li class="dropdown-item"><!----> <a href="/craft/shieldee/" class="nav-link">
+  Shieldee
+</a></li><li class="dropdown-item"><!----> <a href="/craft/panopticon/" class="nav-link">
+  Panopticon
+</a></li><li class="dropdown-item"><!----> <a href="/craft/aws-pricechecker/" class="nav-link">
+  AWS Pricechecker
+</a></li><li class="dropdown-item"><!----> <a href="/craft/ri-watcher/" class="nav-link">
+  AWS RI-Watcher
+</a></li><li class="dropdown-item"><!----> <a href="/craft/ssm-watcher/" class="nav-link">
+  AWS SSM-Watcher
+</a></li><li class="dropdown-item"><!----> <a href="/craft/cheakbbang/" class="nav-link">
+  Cheakbbang
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  About
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="TIL" class="dropdown-title"><span class="title">TIL</span> <span class="arrow down"></span></button> <button type="button" aria-label="TIL" class="mobile-dropdown-title"><span class="title">TIL</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/til/aws/" class="nav-link">
+  AWS
+</a></li><li class="dropdown-item"><!----> <a href="/til/ps/" class="nav-link">
+  PS
+</a></li><li class="dropdown-item"><!----> <a href="/til/cs/" class="nav-link router-link-active">
+  CS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Code craft" class="dropdown-title"><span class="title">Craft</span> <span class="arrow down"></span></button> <button type="button" aria-label="Code craft" class="mobile-dropdown-title"><span class="title">Craft</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/craft/efish/" class="nav-link">
+  Efish
+</a></li><li class="dropdown-item"><!----> <a href="/craft/shieldee/" class="nav-link">
+  Shieldee
+</a></li><li class="dropdown-item"><!----> <a href="/craft/panopticon/" class="nav-link">
+  Panopticon
+</a></li><li class="dropdown-item"><!----> <a href="/craft/aws-pricechecker/" class="nav-link">
+  AWS Pricechecker
+</a></li><li class="dropdown-item"><!----> <a href="/craft/ri-watcher/" class="nav-link">
+  AWS RI-Watcher
+</a></li><li class="dropdown-item"><!----> <a href="/craft/ssm-watcher/" class="nav-link">
+  AWS SSM-Watcher
+</a></li><li class="dropdown-item"><!----> <a href="/craft/cheakbbang/" class="nav-link">
+  Cheakbbang
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Computer Science</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/til/cs/" aria-current="page" class="sidebar-link">Computer Science</a></li><li><a href="/til/cs/1os.html" class="sidebar-link">운영체제</a></li><li><a href="/til/cs/2os.html" class="sidebar-link">운영체제 구조</a></li><li><a href="/til/cs/3os.html" aria-current="page" class="active sidebar-link">프로세스 스케쥴링</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/til/cs/3os.html#배치처리-시스템" class="sidebar-link">배치처리 시스템</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/til/cs/3os.html#queue" class="sidebar-link">Queue</a></li></ul></li><li class="sidebar-sub-header"><a href="/til/cs/3os.html#배치-처리-시스템과-시분할-시스템-멀티-프로그래밍" class="sidebar-link">배치 처리 시스템과 시분할 시스템/멀티 프로그래밍</a></li><li class="sidebar-sub-header"><a href="/til/cs/3os.html#시분할-시스템" class="sidebar-link">시분할 시스템</a></li><li class="sidebar-sub-header"><a href="/til/cs/3os.html#멀티-태스킹" class="sidebar-link">멀티 태스킹</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/til/cs/3os.html#실제-멀티-태스킹" class="sidebar-link">실제 멀티 태스킹</a></li></ul></li><li class="sidebar-sub-header"><a href="/til/cs/3os.html#멀티-태스킹과-멀티-프로세싱" class="sidebar-link">멀티 태스킹과 멀티 프로세싱</a></li><li class="sidebar-sub-header"><a href="/til/cs/3os.html#멀티프로그래밍" class="sidebar-link">멀티프로그래밍</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="프로세스-스케쥴링"><a href="#프로세스-스케쥴링" class="header-anchor">#</a> 프로세스 스케쥴링</h1> <p></p><div class="table-of-contents"><ul><li><a href="#배치처리-시스템">배치처리 시스템</a><ul><li><a href="#queue">Queue</a></li></ul></li><li><a href="#배치-처리-시스템과-시분할-시스템-멀티-프로그래밍">배치 처리 시스템과 시분할 시스템/멀티 프로그래밍</a></li><li><a href="#시분할-시스템">시분할 시스템</a></li><li><a href="#멀티-태스킹">멀티 태스킹</a><ul><li><a href="#실제-멀티-태스킹">실제 멀티 태스킹</a></li></ul></li><li><a href="#멀티-태스킹과-멀티-프로세싱">멀티 태스킹과 멀티 프로세싱</a></li><li><a href="#멀티프로그래밍">멀티프로그래밍</a></li></ul></div><p></p> <h2 id="배치처리-시스템"><a href="#배치처리-시스템" class="header-anchor">#</a> 배치처리 시스템</h2> <ul><li>자동으로 다음 응용 프로그램이 이어서 실행될 수 있도록 하는 시스템</li></ul> <h3 id="queue"><a href="#queue" class="header-anchor">#</a> Queue</h3> <p><img src="/assets/img/queue.e7f79630.png" alt=""></p> <ul><li>FIFO</li></ul> <p><img src="/assets/img/batch.1777bcff.png" alt=""></p> <h2 id="배치-처리-시스템과-시분할-시스템-멀티-프로그래밍"><a href="#배치-처리-시스템과-시분할-시스템-멀티-프로그래밍" class="header-anchor">#</a> 배치 처리 시스템과 시분할 시스템/멀티 프로그래밍</h2> <ul><li>여러 프로그램을 순차적으로 실행히실 수 있도록 해주세요!
+<ul><li>어떤 프로그램은 실행이 너무 시간이 많이 걸려서, 다른 프로그램이 실행하는데 시간을 많이 기다려야한다는 단점</li></ul></li> <li>나는 MP3 음악을 들으면서, 문서 작성을 하고 싶어요! (동시에 여러 으용 프로그램 실행)</li> <li>여러 사용자가 동시에 하나의 컴퓨터를 쓰려면 어떻게 해야하나요? (다중사용자 지원)</li></ul> <blockquote><p>멀티 프로그래밍/시분할 시스템이 나왔다!</p></blockquote> <h2 id="시분할-시스템"><a href="#시분할-시스템" class="header-anchor">#</a> 시분할 시스템</h2> <p><img src="/assets/img/timesharing.638b1f64.png" alt=""></p> <ul><li>다중 사용자 지원을 위해 컴퓨터 응답 시간을 최소화 하는 시스템</li> <li>응용 프로그램이 CPU를 점유하는 시간을 잘게 쪼개어 실행 될 수 있도록 하는 시스템</li></ul> <h2 id="멀티-태스킹"><a href="#멀티-태스킹" class="header-anchor">#</a> 멀티 태스킹</h2> <ul><li>단일 CPI에서, 여러 응용 프로그램이 동시에 실행되는 것처럼 보이도록 하는 시스템
+<ul><li>나는 MP3 음악을 들으며, 문서 작성을 한다.</li></ul></li></ul> <h3 id="실제-멀티-태스킹"><a href="#실제-멀티-태스킹" class="header-anchor">#</a> 실제 멀티 태스킹</h3> <ul><li>1000 ms = 1초</li> <li>10~20ms 단위로도 실행 응용 프로그램이 바뀜</li> <li>사용자에게는 동시에 실행되는 것처럼 보임</li></ul> <h2 id="멀티-태스킹과-멀티-프로세싱"><a href="#멀티-태스킹과-멀티-프로세싱" class="header-anchor">#</a> 멀티 태스킹과 멀티 프로세싱</h2> <p><a href="~@img/cs/multitasking-multiprocessing.png"></a>]</p> <ul><li>멀티 태스킹 : 단일 CPU</li> <li>멀티 프로세싱 : 여러 CPU에 하나의 프로그램을 병렬로 실행해서 실행속도를 극대화 시키는 시스템</li></ul> <h1 id="프로세스-스케쥴링-멀티-프로그래밍"><a href="#프로세스-스케쥴링-멀티-프로그래밍" class="header-anchor">#</a> 프로세스 스케쥴링 - 멀티 프로그래밍</h1> <ul><li>최대한 CPU를 많이 활용하도록 하는 시스템
+<ul><li>시간 대비 CPU 활용도를 높이자</li> <li>응용 프로그램을 짧은 시간 안에 실행 완료를 시킬 수 있음</li></ul></li></ul> <h2 id="멀티프로그래밍"><a href="#멀티프로그래밍" class="header-anchor">#</a> 멀티프로그래밍</h2> <ul><li>응용 프로그램은 온전히 CPU를 쓰기 보다, 다른 작업을 중간에 필요로 하는 경우가 많다.
+<ul><li>응용 프로그램이 실행되다가 파일을 읽는다.</li> <li>응용 프로그램이 실행되다가 프린팅을 한다.</li></ul></li></ul></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/til/cs/2os.html" class="prev">
+        운영체제 구조
+      </a></span> <!----></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.c8ae02a0.js" defer></script><script src="/assets/js/2.f79bbf3a.js" defer></script><script src="/assets/js/19.25ed128a.js" defer></script>
+  </body>
+</html>
