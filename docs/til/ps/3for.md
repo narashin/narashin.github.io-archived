@@ -1,7 +1,7 @@
 ---
 title: for
 description: for와 관련한 백준 문제풀이
-sidebarDepth: 2
+sidebarDepth: 1
 ---
 
 [[toc]]
@@ -299,15 +299,15 @@ for (let i = 1; i <= input[0]; i++) {
 
 [2438번 문제](https://www.acmicpc.net/problem/2438)
 
-## 문제
+### 문제
 
 첫째 줄에는 별 1개, 둘째 줄에는 별 2개, N번째 줄에는 별 N개를 찍는 문제
 
-## 입력
+### 입력
 
 첫째 줄에 N(1 ≤ N ≤ 100)이 주어진다.
 
-## 출력
+### 출력
 
 첫째 줄부터 N번째 줄까지 차례대로 별을 출력한다.
 
@@ -349,15 +349,12 @@ let input = require('fs')
   .toString()
   .split(' ');
 
-let star = '';
-let blank = '';
-
-for (var i = 1; i <= input[0]; i++) {
-  for (var j = input[0] - 1; j <= 0; j--) {
-    star += '*';
-    blank += ' ';
-    console.log(blank + star);
+for (var i = 0; i < input; i++) {
+  let star = '';
+  for (var j = input - 1; j >= 0; j--) {
+    star += j <= i ? '*' : ' ';
   }
+  console.log(star);
 }
 ```
 
