@@ -1,5 +1,5 @@
 ---
-title: worklight
+title: 뽀모도로 기법을 이용한 방 조명 셋팅하기
 description: 뽀모도로 기법을 이용한 방 조명 셋팅하기 — 그런데 Cloudwatch Event와 Lambda, 필립스 Hue를 곁들인
 tags: ['Python', 'Lambda', 'ToyProject']
 sidebar: auto
@@ -16,40 +16,40 @@ sidebar: auto
 
 rainygirl님이 소개해주신 [뽀모도로 기법](https://ko.wikipedia.org/wiki/%ED%8F%AC%EB%AA%A8%EB%8F%84%EB%A1%9C_%EA%B8%B0%EB%B2%95)이나 [KMN 작업법](https://twitter.com/starlakim/status/648064735779254272?s=20)의 요는 **내가 집중할 수 있는 시간을 최대로 활용하여 집중하고, 나머지 시간에는 주위를 환기시킬 수 있도록 스트레칭을 하거나 차를 마시거나 짧게 다른 일을 하는 것**이었다. 사람마다 집중하기에 적절한 시간이 각자 다를 것이라고 생각한다. 나는 40분의 일하는 시간, 20분의 환기 시간을 갖도록 셋팅했다.
 
-# 시나리오
+## 시나리오
 
 - 매 40분은 오렌지 계열의 따뜻한 색으로 방 조명을 유지하고, 20분은 붉은색 계열의 색으로 방 조명을 바꾼다.
     - 단 매일 있는 화상 스크럼 시간에는 조명이 붉으면 안 되므로 따뜻한 색을 유지한다.
 - 업무시간인 월요일부터 금요일, 오전 8시부터 오후 7시까지 작동한다.
 
-# 준비물
+## 준비물
 
 - 스마트 조명이 필요하다.
     - 장비병이 있었던 나는 게이밍에 적합한 환경을 만들기 위해 이미 필립스 Hue 제품으로 방 조명을 셋팅해놓고 있었으므로, 이를 이용하면 되겠다고 생각했다.
 - crontab을 돌리기 위한 환경이 필요하다.
     - rainygirl님은 라즈베이파이를 이용하셨으나, 당장 이 토이프로젝트를 ~~손민수 하기 위해~~ 라즈베이파이를 사는건 과한 것 같아 다른 방법을 강구했다. 내게 익숙한 AWS Cloudwatch EventBridge와 Lambda를 이용해서 이 환경을 대신하기로 했다. (프리티어 기준으로 월별 100만건의 호출이 무료이고, 비용이 발생한다고 해도 100만건 당 0.2USD가 청구되므로 비용상으로 큰 문제가 없다고 판단했다.)
 
-# 뚝딱뚝딱 만들어보기
+## 뚝딱뚝딱 만들어보기
 
 필립스 휴 브릿지는 DHCP를 사용하고 있었으므로 이를 해제하고 수동으로 설정해준다.
 
 ![IMG_3270.PNG](~@img/worklight/IMG_3270.png)
 
-1. Hue 앱을 켠다
+- Hue 앱을 켠다
 
 ![IMG_3271.PNG](~@img/worklight/IMG_3271.png)
 
-1. 환경 설정 > Bridge 설정
+- 환경 설정 > Bridge 설정
 
 ![IMG_3272.PNG](~@img/worklight/IMG_3272.png)
 
-1. 네트워크 설정
+- 네트워크 설정
 
 ![IMG_3273.PNG](~@img/worklight/IMG_3273.png)
 
-1. DHCP 해제
+- DHCP 해제
 
-## 포트포워딩 설정
+### 포트포워딩 설정
 
 외부(AWS Lambda)환경에서 접속할 수 있어야 하기에 무선공유기의 포트포워드 설정을 해준다.
 
@@ -60,9 +60,9 @@ rainygirl님이 소개해주신 [뽀모도로 기법](https://ko.wikipedia.org/w
 
 ![스크린샷 2021-12-07 오후 2.52.14.png](~@img/worklight/worklight_2.52.14.png)
 
-1. 앱에서 확인한 Hue Bridge의 IP주소와 포트를 입력하고, 접속할 외부포트를 적당히 정해준 뒤 적용하면 된다.
+- 앱에서 확인한 Hue Bridge의 IP주소와 포트를 입력하고, 접속할 외부포트를 적당히 정해준 뒤 적용하면 된다.
 
-## phue를 이용한 Lambda 코드 작성
+### phue를 이용한 Lambda 코드 작성
 
 ```bash
 $ pip install phue
@@ -114,7 +114,7 @@ def convert_color(hexCode):
 
 `handler`에서 시간은 적당히 내가 원하는 시간을 커스텀하게 지정해주었고, (스크럼 시간이나 아주 이른 오전시간은 붉은 조명으로 바뀌는 시간에서 제외했다.) `convert_color` 에서는 [https://www.color-hex.com/](https://www.color-hex.com/) 를 통해 내가 원하는 색깔을 Hue가 원하는 색상의 값으로 변형해서 handler로 넘겨주도록 했다. 참고로 시간은 UTC 기준이다.
 
-## AWS Lambda에 배포
+### AWS Lambda에 배포
 
 ![스크린샷 2021-12-07 오후 3.21.47.png](~@img/worklight/worklight_3.21.47.png)
 
@@ -124,7 +124,7 @@ def convert_color(hexCode):
 
 이때 외부 패키지인 `phue` 는 자동으로 import 되지 않으므로 따로 레이어에 추가하는 작업이 필요하다. 레이어(계층)를 이용하여 따로 추가해도 되고, [zip 파일로 한번에 코드와 함께 올려도 상관없지만](https://docs.aws.amazon.com/ko_kr/lambda/latest/dg/python-package.html) 나는 따로 관리하기 위해 함수와 패키지레이어를 분리해서 올리려고 한다.
 
-## 레이어 추가하기
+### 레이어 추가하기
 
 ```bash
 $ pip install 모듈 -t .
@@ -139,7 +139,7 @@ $ pip install 모듈 -t .
 
 압축한 파일을 계층 구성을 통해 올려주면 된다.
 
-## CloudWatch EventBridge를 통해 Trigger 연결
+### CloudWatch EventBridge를 통해 Trigger 연결
 
 ![스크린샷 2021-12-07 오후 3.37.29.png](~@img/worklight/worklight_3.37.29.png)
 
@@ -151,7 +151,7 @@ $ pip install 모듈 -t .
 
 사실 이미 코드에 시간별 조명색을 다 정해놔서 언제 호출 되든 코드에 스태틱하게 박아놓은 색으로 변할테지만, 최소한의 호출만하기 위해 시간을 정해서 트리거링 하기로 했다. (너무 자주 호출하면 비용이 발생하기 때문에 신중 또 신중)
 
-# 웁스! 오류 발생!
+## 웁스! 오류 발생!
 
 ```bash
 [ERROR] PhueRegistrationException: (101, 'The link button has not been pressed in the last 30 seconds.')
@@ -183,13 +183,13 @@ def __init__(self, ip=None, username=None, config_file_path=None):
 
 이 코드를 수정하여 다시 패키지를 압축하고 Lambda 레이어에 올려주면 오류 수정 완완.
 
-# 개선할 점
+## 개선할 점
 
 지금 당장이야 쓰는데에 별 문제는 없지만 Lambda 함수에 IP나 ID정보를 그냥 넣는건 좀 불안하다.    
 
 Lambda > 함수 > 구성 > 환경 변수에서 해당 값들을 따로 관리해주는것이 좋겠다.
 
-# 마무리
+## 마무리
 
 ![IMG_3257-2.gif](~@img/worklight/IMG_3257-2.gif)
 
