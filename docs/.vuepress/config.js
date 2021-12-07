@@ -55,6 +55,7 @@ module.exports = {
           { text: 'AWS Pricechecker', link: '/craft/aws-pricechecker/' },
           { text: 'AWS RI-Watcher', link: '/craft/ri-watcher/' },
           { text: 'AWS SSM-Watcher', link: '/craft/ssm-watcher/' },
+          { text: 'Worklight', link: '/craft/worklgiht/' },
           { text: 'Cheakbbang', link: '/craft/cheakbbang/' },
         ],
       },
