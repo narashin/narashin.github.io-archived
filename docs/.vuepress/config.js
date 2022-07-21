@@ -25,23 +25,18 @@ module.exports = {
           children: getChildren('./docs/til/cs/'),
         },
       ],
-      '/til/note/': [
-        {
-          title: 'Note',
-          children: getChildren('./docs/til/note/'),
-        },
-      ],
     },
     nav: [
       { text: 'Home', link: '/' },
       { text: 'About', link: '/about/' },
+      { text: 'Note', link: '/note/'},
       {
         text: 'TIL',
         ariaLabel: 'TIL',
         items: [
           { text: 'AWS', link: '/til/aws/' },
           // { text: 'PS', link: '/til/ps/' },
-          { text: 'Note', link: '/til/note/' },
+          // { text: 'Note', link: '/til/note/' },
           { text: 'CS', link: '/til/cs/' },
         ],
       },
