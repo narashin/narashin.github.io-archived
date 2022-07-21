@@ -1,5 +1,5 @@
 ---
-title: 협력 업체 음원 수급 자동화를 위한 파이프라인 만들기 (구상하기)
+title: 협력 업체 음원 수급 자동화를 위한 파이프라인 만들기 A (구상하기)
 description: 협력 업체가 만든 프로그램만 이용해서 받을 수 있다! 이것을 자동화 해봅시다
 tags: ['AWS']
 sidebar: auto
@@ -11,7 +11,7 @@ sidebar: auto
 {{ $frontmatter.description }}
 :::
 
-# 0. 아이디어
+## 0. 아이디어
 
 1. 협력업체는 Teleport라는 프로그램을 이용하여 파일들을 전달해준다.
 2. Teleport는 jar로 되어있다.
@@ -19,7 +19,7 @@ sidebar: auto
     2. Batch/ECS를 이용하여 jar를 돌리기
         1. Docker를 이용
 
-# 1. Lambda를 이용하여 jar 돌리기 —> 불가
+## 1. Lambda를 이용하여 jar 돌리기 —> 불가
 
 최초 아이디어는 Lambda를 이용한 것이었으나, AWS Lambda는 임시 저장소의 크기가 512MB 밖에 되지 않는다.
 
@@ -33,7 +33,7 @@ sidebar: auto
 
 Order ID내 세부 단위로 들어가서 개별 파일들을 받아올 수도 있다.
 
-## 어려움
+### 어려움
 
 그렇지만 이런 방법을 실제 서비스를 도입했을 때,
 
@@ -45,13 +45,13 @@ Order ID내 세부 단위로 들어가서 개별 파일들을 받아올 수도 �
 
 등의 어려움이 있다.
 
-# 2. AWS Batch(Fargate) 등 컨테이너를 이용하여 jar 돌리기
+## 2. AWS Batch(Fargate) 등 컨테이너를 이용하여 jar 돌리기
 
 EC2, Fargate를 선택하여 docker를 돌릴 수 있다.
 
 ![Untitled Diagram.drawio.png](~@img/universal-music-pipeline/3-UntitledDiagram.drawio.png)
 
-## 고려해야하는 점
+### 고려해야하는 점
 
 - Docker 작업
 - 데이터 볼륨 확인
@@ -61,7 +61,7 @@ EC2, Fargate를 선택하여 docker를 돌릴 수 있다.
         - Fargate 기본 임시 스토리지
             - 21GiB - 200GiB 까지 사용 가능하며, 컨테이너가 종료되면 해당 데이터도 날아가게 됨 → 이 경우 S3까지 옮기는 작업을 완벽하게 마무리 해야함.
 
-## 요금
+### 요금
 
 ### Fargate
 
@@ -84,4 +84,7 @@ EC2, Fargate를 선택하여 docker를 돌릴 수 있다.
 
 - Batch 작업에 필요한 권한
     - AWSBatchServiceRole
-- EFS 생성/읽기/목록 작업에 필요한 정책
+- EFS 생성/읽기/목록 작업에 필요한 정책 등 
+
+후일담
+: 이 파이프라인을 진행하면서 사실상 Role/Policy 와의 전쟁이었음
