@@ -11,8 +11,11 @@ sidebar: auto
 {{ $frontmatter.description }}
 :::
 
+## 파이프라인 구성 아키텍처
+
 ![architecture](~@img/universal-music-pipeline/1-universal_final_pipeline.png)
 
+## 아키텍처 설명
 1. `GET Order IDs` :: Lambda
     1. UCS 에 공개된 데이터를 받아온다.
     2. 받아온 데이터는 Log에 저장 되며 이는 CloudWatch Logs Subscribe Filter를 거쳐 Order ID가 있을 경우 CHECK Order ID를 트리거 한다.
