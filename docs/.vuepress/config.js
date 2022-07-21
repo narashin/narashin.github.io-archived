@@ -7,10 +7,10 @@ module.exports = {
   head: [['link', { rel: 'icon', href: '/logo.jpg' }]],
   themeConfig: {
     sidebar: {
-      '/til/ps/': [
+      '/note/': [
         {
-          title: 'PS',
-          children: getChildren('./docs/til/ps/'),
+          title: 'Note',
+          children: getChildren('./docs/note/'),
         },
       ],
       '/til/aws/': [

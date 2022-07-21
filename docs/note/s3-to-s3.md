@@ -13,7 +13,7 @@ sidebar: auto
 
 # 가장 쉬운 방법 SRR
 
-![giphy.gif](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9ac34910-ede9-46f7-bb96-a1a3e0ca5abe/giphy.gif)
+![giphy.gif](~@img/s3-to-s3/6-giphy.gif)
 
 SRR은 동일 리전 복제(Same Region Replication)의 줄임말로 AWS에서 정식으로 지원하고 있는 기능이다. 새로 업로드된 S3 객체를 동일한 AWS 리전에서 대상 버킷으로 비동기식 자동 복제를 지원한다.
 
