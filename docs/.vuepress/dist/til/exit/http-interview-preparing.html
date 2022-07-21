@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>면접 준비 - HTTP | Today Nara Learned</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <link rel="icon" href="/logo.jpg">
+    <meta name="description" content="면접 준비 - HTTP">
+    
+    <link rel="preload" href="/assets/css/0.styles.b1e54e08.css" as="style"><link rel="preload" href="/assets/js/app.0f3a3cd6.js" as="script"><link rel="preload" href="/assets/js/2.451fac93.js" as="script"><link rel="preload" href="/assets/js/55.fcf78cc9.js" as="script"><link rel="prefetch" href="/assets/js/10.a90e77bd.js"><link rel="prefetch" href="/assets/js/11.15844251.js"><link rel="prefetch" href="/assets/js/12.e6face72.js"><link rel="prefetch" href="/assets/js/13.a93bdce1.js"><link rel="prefetch" href="/assets/js/14.f9add229.js"><link rel="prefetch" href="/assets/js/15.0aa5f5dc.js"><link rel="prefetch" href="/assets/js/16.13171709.js"><link rel="prefetch" href="/assets/js/17.483807b9.js"><link rel="prefetch" href="/assets/js/18.c638a1ec.js"><link rel="prefetch" href="/assets/js/19.d53974f0.js"><link rel="prefetch" href="/assets/js/20.e38ff84b.js"><link rel="prefetch" href="/assets/js/21.5689b1f8.js"><link rel="prefetch" href="/assets/js/22.0f3c7806.js"><link rel="prefetch" href="/assets/js/23.ff4dd223.js"><link rel="prefetch" href="/assets/js/24.dec5dfb1.js"><link rel="prefetch" href="/assets/js/25.0143b70d.js"><link rel="prefetch" href="/assets/js/26.48848add.js"><link rel="prefetch" href="/assets/js/27.5e6f7d45.js"><link rel="prefetch" href="/assets/js/28.e975f426.js"><link rel="prefetch" href="/assets/js/29.d09370d6.js"><link rel="prefetch" href="/assets/js/3.138020fa.js"><link rel="prefetch" href="/assets/js/30.982ce84e.js"><link rel="prefetch" href="/assets/js/31.488804f2.js"><link rel="prefetch" href="/assets/js/32.e2037b5f.js"><link rel="prefetch" href="/assets/js/33.5867b051.js"><link rel="prefetch" href="/assets/js/34.273d3f6d.js"><link rel="prefetch" href="/assets/js/35.c5c97423.js"><link rel="prefetch" href="/assets/js/36.f430cb57.js"><link rel="prefetch" href="/assets/js/37.65b991df.js"><link rel="prefetch" href="/assets/js/38.9eb61432.js"><link rel="prefetch" href="/assets/js/39.345a8708.js"><link rel="prefetch" href="/assets/js/4.75ff7562.js"><link rel="prefetch" href="/assets/js/40.b29fb567.js"><link rel="prefetch" href="/assets/js/41.a0c04dd0.js"><link rel="prefetch" href="/assets/js/42.4474dc52.js"><link rel="prefetch" href="/assets/js/43.edc5c6c2.js"><link rel="prefetch" href="/assets/js/44.e29e97ba.js"><link rel="prefetch" href="/assets/js/45.a95046e2.js"><link rel="prefetch" href="/assets/js/46.8b8aa723.js"><link rel="prefetch" href="/assets/js/47.105f0468.js"><link rel="prefetch" href="/assets/js/48.8a11b613.js"><link rel="prefetch" href="/assets/js/49.133f0f48.js"><link rel="prefetch" href="/assets/js/5.caa2574f.js"><link rel="prefetch" href="/assets/js/50.7887a18a.js"><link rel="prefetch" href="/assets/js/51.68f73cf1.js"><link rel="prefetch" href="/assets/js/52.6f82028c.js"><link rel="prefetch" href="/assets/js/53.0c41954b.js"><link rel="prefetch" href="/assets/js/54.8ce26079.js"><link rel="prefetch" href="/assets/js/56.8dd8d87e.js"><link rel="prefetch" href="/assets/js/57.a2f35d23.js"><link rel="prefetch" href="/assets/js/58.606da047.js"><link rel="prefetch" href="/assets/js/59.7f0124c6.js"><link rel="prefetch" href="/assets/js/6.04e276bb.js"><link rel="prefetch" href="/assets/js/60.122dea18.js"><link rel="prefetch" href="/assets/js/61.7388de93.js"><link rel="prefetch" href="/assets/js/62.290ece9d.js"><link rel="prefetch" href="/assets/js/63.9d1b82ef.js"><link rel="prefetch" href="/assets/js/7.10a96fce.js"><link rel="prefetch" href="/assets/js/8.4e702934.js"><link rel="prefetch" href="/assets/js/9.66816da0.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b1e54e08.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Today Nara Learned</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  About
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="TIL" class="dropdown-title"><span class="title">TIL</span> <span class="arrow down"></span></button> <button type="button" aria-label="TIL" class="mobile-dropdown-title"><span class="title">TIL</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/til/aws/" class="nav-link">
+  AWS
+</a></li><li class="dropdown-item"><!----> <a href="/til/note/" class="nav-link">
+  Note
+</a></li><li class="dropdown-item"><!----> <a href="/til/cs/" class="nav-link">
+  CS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Code craft" class="dropdown-title"><span class="title">Craft</span> <span class="arrow down"></span></button> <button type="button" aria-label="Code craft" class="mobile-dropdown-title"><span class="title">Craft</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/craft/efish/" class="nav-link">
+  Efish
+</a></li><li class="dropdown-item"><!----> <a href="/craft/shieldee/" class="nav-link">
+  Shieldee
+</a></li><li class="dropdown-item"><!----> <a href="/craft/panopticon/" class="nav-link">
+  Panopticon
+</a></li><li class="dropdown-item"><!----> <a href="/craft/aws-pricechecker/" class="nav-link">
+  AWS Pricechecker
+</a></li><li class="dropdown-item"><!----> <a href="/craft/ri-watcher/" class="nav-link">
+  AWS RI-Watcher
+</a></li><li class="dropdown-item"><!----> <a href="/craft/ssm-watcher/" class="nav-link">
+  AWS SSM-Watcher
+</a></li><li class="dropdown-item"><!----> <a href="/craft/worklight/" class="nav-link">
+  Worklight
+</a></li><li class="dropdown-item"><!----> <a href="/craft/cheakbbang/" class="nav-link">
+  Cheakbbang
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  About
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="TIL" class="dropdown-title"><span class="title">TIL</span> <span class="arrow down"></span></button> <button type="button" aria-label="TIL" class="mobile-dropdown-title"><span class="title">TIL</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/til/aws/" class="nav-link">
+  AWS
+</a></li><li class="dropdown-item"><!----> <a href="/til/note/" class="nav-link">
+  Note
+</a></li><li class="dropdown-item"><!----> <a href="/til/cs/" class="nav-link">
+  CS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Code craft" class="dropdown-title"><span class="title">Craft</span> <span class="arrow down"></span></button> <button type="button" aria-label="Code craft" class="mobile-dropdown-title"><span class="title">Craft</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/craft/efish/" class="nav-link">
+  Efish
+</a></li><li class="dropdown-item"><!----> <a href="/craft/shieldee/" class="nav-link">
+  Shieldee
+</a></li><li class="dropdown-item"><!----> <a href="/craft/panopticon/" class="nav-link">
+  Panopticon
+</a></li><li class="dropdown-item"><!----> <a href="/craft/aws-pricechecker/" class="nav-link">
+  AWS Pricechecker
+</a></li><li class="dropdown-item"><!----> <a href="/craft/ri-watcher/" class="nav-link">
+  AWS RI-Watcher
+</a></li><li class="dropdown-item"><!----> <a href="/craft/ssm-watcher/" class="nav-link">
+  AWS SSM-Watcher
+</a></li><li class="dropdown-item"><!----> <a href="/craft/worklight/" class="nav-link">
+  Worklight
+</a></li><li class="dropdown-item"><!----> <a href="/craft/cheakbbang/" class="nav-link">
+  Cheakbbang
+</a></li></ul></div></div> <!----></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="_1-http란"><a href="#_1-http란" class="header-anchor">#</a> 1. HTTP란?</h2> <p>WWW상에서 정보를 주고 받을 수 있는 프로토콜. 주로 TCP를 사용하며, 80번 포트를 사용한다.
+HTTP는 클라이언트와 서버 사이에 이루어지는 요청/응답 프로토콜이다. 주로 HTML 문서를 주고 받는 데에 쓰인다. Stateless.</p> <h2 id="_2-https란"><a href="#_2-https란" class="header-anchor">#</a> 2. HTTPS란?</h2> <p>HTTPS는 HTTP의 보안이 강화된 버전. 소켓 통신에서 일반 텍스트를 이용하는 대신에, SSL이다 TLS 프로토콜을 통해 세션 데이터를 암호화 한다. 기본 TCP/IP 포트는 443.</p> <h2 id="_3-http1-1과-2-0의-차이"><a href="#_3-http1-1과-2-0의-차이" class="header-anchor">#</a> 3. HTTP1.1과 2.0의 차이</h2> <p><img src="https://miro.medium.com/max/1328/1*rf2AnDQyHfGO_ThYfb-hWA.png" alt="1.1과2.0차이"></p> <p>HTTP1.1은 연결당 하나의 요청과 응답을 처리하기 때문에 동시 전송 문제와 다수의 리소스를 처리하는 데에 속도, 성능 이슈가 있었음.</p> <p>HTTP2.0은 한 커넥션에 여러개 메시지를 동시에 주고 받을 수 있으며, 요청 리소스간 의존 관계를 설정할 수 있고, HTML문서상 필요한 리로스를 클라이언트 요청 없이 보내줄 수 있으며, Header정보를 HPACK압축 방식을 이용하여 압축 전송 하여 성능과 속도가 크게 향상.</p> <h2 id="_4-http-응답-코드"><a href="#_4-http-응답-코드" class="header-anchor">#</a> 4. HTTP 응답 코드</h2> <p>1XX Infomational<br>
+2XX Success<br>
+3XX Redirection<br>
+4XX Client Error<br>
+5XX Server Error</p> <h2 id="_5-header"><a href="#_5-header" class="header-anchor">#</a> 5. Header</h2> <p>인증 Authorization<br>
+캐싱 Age, Expires<br>
+조건부 Etag, Last-Modified<br>
+연결 관리 Connection, Keep-Alive<br>
+컨텐츠 협상 Accept,<br>
+쿠키 Cookie, Set-Cookie<br>
+CORS Access-Control-Allow-Origin, Orgin, Access-Control-Request-Headers, Access-Control-Request-Method<br>
+메시지 바디 정보 Content-Type<br>
+프록시 Forwarded<br>
+요청 컨텍스트 From, Host, Referer, User-Agent<br>
+응답 컨텍스트 Allow, Server</p> <h2 id="_4-crud에-대응되는-method"><a href="#_4-crud에-대응되는-method" class="header-anchor">#</a> 4. CRUD에 대응되는 Method</h2> <p>GET, POST, PUT, DELETE</p> <h2 id="_5-멱등성을-가지는-method"><a href="#_5-멱등성을-가지는-method" class="header-anchor">#</a> 5. 멱등성을 가지는 Method</h2> <ul><li>멱등성 : 여러번 연산해도 결과가 달라지지 않는 성질</li></ul> <p>GET, HEAD와 같이 서버측의 상태 정보를 변경하지 않는 메소드</p> <h2 id="_6-stateless와-stateful"><a href="#_6-stateless와-stateful" class="header-anchor">#</a> 6. Stateless와 Stateful</h2> <h3 id="stateless"><a href="#stateless" class="header-anchor">#</a> Stateless</h3> <p>대표적인 Stateless 프로토콜로는 UDP와 HTTP가 있다.<br>
+세션 상태에 관계 없이 단순히 데이터그램을 source에서 destination 쪽으로 전송한다.<br>
+Client가 송신하려 했던 모든 데이터가 server쪽에 수신되었는지 확인하지 않는다. 따라서 server쪽은 Client와의 세션 정보를 전혀 저장하지 않는다.</p> <ul><li>세션 정보를 server에 저장하지 않음. 세션 상태에 무관한 응답
+<ul><li>따라서 스케일링에 용이하다</li></ul></li></ul> <h3 id="stateful"><a href="#stateful" class="header-anchor">#</a> Stateful</h3> <p>대표적인 Stateful 프로토콜로는 TCP가 있다.<br>
+TCP의 3way handshaking과정을 생각해보면, Server와 Client는 3way handshaking 과정에서 SYN과 SYN/ACK을 주고 받으며 양단간 세션 상태를 정해진 '상태'로 만든다.<br>
+세션 상태가 정해지면 client와 server는 데이터를 주고 받을 수 있다.<br>
+TCP는 세션 상태에 따라 server 응답이 달라지는 stateful 프로토콜이다.</p> <ul><li>세션 정보를 server에 저장, 세션 상태에 따른 응답 을 만족하도록 설계된 서비스 구조</li></ul> <h2 id="_7-session과-cookie"><a href="#_7-session과-cookie" class="header-anchor">#</a> 7. Session과 Cookie</h2> <p>HTTP 프로토콜의 특징이자 약점을 보완하기 위해 사용된다.</p> <ol><li>Connectionless 프로토콜
+클라이언트가 서버에 요청을 했을 때, 그 요청에 맞는 응답을 보낸 후 연결을 끊는 처리 방식
+(단, HTTP 1.1 에서 <code>keep-alive</code> 값으로 연결을 유지하고 재활용 하는 기능이 추가 됨)</li> <li>Stateless 프로토콜
+클라이언트의 상태 정보를 가지지 않는 서버 처리 방식. 클라이언트와 첫번째 통신에서 데이터를 주고 받았다고 해도, 두번째 통신에서 이전 데이터를 유지 하지 않는다.</li></ol> <p>그러나 실제로는 데이터 유지가 필요한 경우가 많아서, 둘다 웹 통신간 유지하려는 정보(로그인 정보 등)를 저장하기 위해 사용 된다.</p> <h3 id="session"><a href="#session" class="header-anchor">#</a> Session</h3> <p>일정 시간 동안 같은 사용자(브라우저)로부터 들어오는 일련의 요구를 하나의 상태로 보고, 그 상태를 일정하게 유지시키는 기술이다. (일정 시간이란, 웹 서버에 접속한 시점부터 웹 브라우저를 종료하여 연결을 끝내는 시점을 의미) 예를 들어 화면을 이동해도 로그인이 풀리지 않고 로그아웃전까지 유지</p> <ul><li>웹 서버에 웹 컨테이너의 상태를 유지하기 위한 정보를 저장한다.</li> <li>브라우저를 닫거나, 서버에서 세션을 삭제했을 때만 삭제가 되므로, 쿠키보다 비교적 보안이 좋다</li> <li>저장 데이터에 제한이 없다. (서버가 허락하는 한)</li> <li>각 클라이언트 고유의 Session ID를 부여한다.</li></ul> <h4 id="session의-동작순서"><a href="#session의-동작순서" class="header-anchor">#</a> Session의 동작순서</h4> <ol><li>클라이언트가 페이지를 요청</li> <li>서버는 접근한 클라이언트의 Request-Header 필드인 Cookie를 확인하여, 클라이언트가 해당 session id를 보냈는지 확인</li> <li>session id가 존재하지 않는다면, 서버는 session id를 생성해 클라이언트에게 반환</li> <li>서버에서 클라이언트로 돌려준 session id를 쿠키를 사용해 서버에 저장</li> <li>클라이언트는 재접속시, 이 쿠키를 이용하여 session-id 값을 서버에 전달</li></ol> <h3 id="cookie"><a href="#cookie" class="header-anchor">#</a> Cookie</h3> <p>사용자가 어떠한 웹 사이트를 방문할 경우, 그 사이트가 사용하고 있는 서버에서 사용자의 컴퓨터에 저장하는 작은 기록 정보 파일.<br>
+HTTP에서 클라이언트의 상태 정보를 클라이언트 PC에 저장하였다가 필요시 정보를 참조하거나 재사용 가능.</p> <ul><li>이름, 값, 만료일(저장 기간), 경로 정보로 구성</li> <li>클라이언트에 총 300개의 쿠키 저장 가능</li> <li>하나의 도메인당 20개의 쿠키를 가질 수 있음</li> <li>하나의 쿠키는 4KB까지 저장 가능 하다</li></ul> <h4 id="cookie의-동작순서"><a href="#cookie의-동작순서" class="header-anchor">#</a> Cookie의 동작순서</h4> <ol><li>클라이언트가 페이지를 요청</li> <li>웹 서버가 쿠키 생성</li> <li>생성한 쿠키에 정보에 담아 HTTP 화면을 돌려줄 때, 같이 클라이언트에 반환</li> <li>넘겨 받은 쿠키는 클라이언트가 로컬 PC에 저장하여 가지고 있다가, 다시 서버가 요청할 때 요청과 함께 쿠키를 전송</li> <li>동일 사이트 재방문시 클라이언트 PC에 해당 쿠키가 있는 경우, 요청 페이지와 함께 쿠키를 전송</li></ol> <h2 id="_8-request-response"><a href="#_8-request-response" class="header-anchor">#</a> 8. Request/Response</h2> <h3 id="request"><a href="#request" class="header-anchor">#</a> Request</h3> <p>HTTP Request는 서버에서 데이터를 처리하기 위한 또는 가져오기 위한 메시지이다.</p> <ol><li>Start Line</li></ol> <ul><li>HTTP Method</li> <li>Request Target</li> <li>HTTP Version</li></ul> <ol start="2"><li>Header</li></ol> <ul><li>Key: value</li></ul> <ol start="3"><li>Body</li></ol> <ul><li>해당 요청의 실제 내용</li></ul> <h3 id="response"><a href="#response" class="header-anchor">#</a> Response</h3> <ol><li>Start Line</li></ol> <ul><li>HTTP Version</li> <li>Status Code</li> <li>Status Text</li></ul> <ol start="2"><li><p>Headers</p></li> <li><p>Body</p></li></ol> <h2 id="_9-multipart란"><a href="#_9-multipart란" class="header-anchor">#</a> 9. Multipart란</h2> <p>MIME 타입 중 하나로서, 웹 클라이언트가 요청을 보낼 때, http 프로토콜의 바디 부분에 데이터를 여러부분으로 나눠서 보내는 것.</p> <h2 id="_10-로그인-프로세스"><a href="#_10-로그인-프로세스" class="header-anchor">#</a> 10. 로그인 프로세스</h2> <p>ID 평문, PW 비대칭 암호화 알고리즘을 써서 해싱처리. sha256.
+form id, pw
+http post -&gt; content type x-form-encoded
+서버는 id를 기준으로 db . 유니크키로
+pw는 body로 받은 패스워
+애플리케이션에서 해싱 암호화 = 암호 패싱 된거 확인
+retry count</p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.0f3a3cd6.js" defer></script><script src="/assets/js/2.451fac93.js" defer></script><script src="/assets/js/55.fcf78cc9.js" defer></script>
+  </body>
+</html>
