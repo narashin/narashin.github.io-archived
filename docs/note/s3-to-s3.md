@@ -1,4 +1,11 @@
-# s3 bucket에서 s3 bucket으로 약 1000만개 파일 옮기기
+---
+title: s3 bucket에서 s3 bucket으로 약 1000만개 파일 옮기기
+description: 주어진 시간 안에 1000만 여개 파일 퍼다 나르기 도전기
+tags: ['Python', 's3', 's5cmd']
+sidebar: auto
+---
+
+# {{ $frontmatter.title }}
 
 협력 업체에서 본인들의 데이터를 다운받을 수 있게 getObject 권한을 **일시적**으로 주었다. 그것은 단 한달.
 
