@@ -10,7 +10,7 @@ sidebar: false
    
 Python, Django, Nodejs, Typescript를 활용하여 개발합니다. AWS 인프라 서비스 환경을 더 쓰기 좋게 만듭니다.
    
-<Perl Cookbook>과 <Learning Regular Expression>를 번역 출간했습니다.
+[<Perl Cookbook>](http://www.yes24.com/product/goods/36148049)과 [<Learning Regular Expression>](http://www.yes24.com/Product/Goods/75454395)를 번역 출간했습니다.
 
 
 ::: tip 저를 더 알고 싶으시다면
