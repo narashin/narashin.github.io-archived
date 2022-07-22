@@ -15,7 +15,7 @@ Python, Django, Nodejs, Typescript를 활용하여 개발합니다. AWS 인프�
 
 ::: tip 저를 더 알고 싶으시다면
 
-[Résumé](https://nara-dev.notion.site/Nara-Shin-2124b4439ba64103a2691fcb62af2f5a)   
+[Résumé](https://nara-dev.notion.site/Nara-Shin-5517c7e1c59042b5a1cc9b76d870d3c5)   
 [Github](https://github.com/narashin)  
 [Twitter](https://twitter.com/pengdrinksbeer)  
 [LinkedIn](https://www.linkedin.com/in/shinnara)  
