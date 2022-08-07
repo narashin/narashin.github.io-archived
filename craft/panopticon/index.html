@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Panopticon | Today Nara Learned</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <link rel="icon" href="/logo.jpg">
+    <script async="true" src="https://www.googletagmanager.com/gtag/js?id=G-HY9BVBRNH5"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-HY9BVBRNH5');</script>
+    <meta name="description" content="CloudTrail을 이용한 Security Group 수정 알림 Slack으로 수신하기">
+    
+    <link rel="preload" href="/assets/css/0.styles.e0d4892b.css" as="style"><link rel="preload" href="/assets/js/app.1c798ad4.js" as="script"><link rel="preload" href="/assets/js/2.85c0c7e1.js" as="script"><link rel="preload" href="/assets/js/5.6d0e4e7b.js" as="script"><link rel="prefetch" href="/assets/js/10.16b83ecb.js"><link rel="prefetch" href="/assets/js/11.4cef24df.js"><link rel="prefetch" href="/assets/js/12.55319f6e.js"><link rel="prefetch" href="/assets/js/13.2e9fab8d.js"><link rel="prefetch" href="/assets/js/14.fb4620d4.js"><link rel="prefetch" href="/assets/js/15.fd23d30a.js"><link rel="prefetch" href="/assets/js/16.8fbdd9c3.js"><link rel="prefetch" href="/assets/js/17.06d43aee.js"><link rel="prefetch" href="/assets/js/18.e121e88b.js"><link rel="prefetch" href="/assets/js/19.72446240.js"><link rel="prefetch" href="/assets/js/20.e92c5712.js"><link rel="prefetch" href="/assets/js/21.477b9d08.js"><link rel="prefetch" href="/assets/js/22.4ae9f7ca.js"><link rel="prefetch" href="/assets/js/23.49068f39.js"><link rel="prefetch" href="/assets/js/24.25e72198.js"><link rel="prefetch" href="/assets/js/25.67c9f037.js"><link rel="prefetch" href="/assets/js/26.a740dff0.js"><link rel="prefetch" href="/assets/js/27.14ced715.js"><link rel="prefetch" href="/assets/js/28.9d6f4269.js"><link rel="prefetch" href="/assets/js/29.5fc30a5e.js"><link rel="prefetch" href="/assets/js/3.d9427b31.js"><link rel="prefetch" href="/assets/js/30.ccfe829a.js"><link rel="prefetch" href="/assets/js/31.7827940a.js"><link rel="prefetch" href="/assets/js/32.5d55220e.js"><link rel="prefetch" href="/assets/js/33.fcec54f9.js"><link rel="prefetch" href="/assets/js/34.02d4bf96.js"><link rel="prefetch" href="/assets/js/35.2960efe8.js"><link rel="prefetch" href="/assets/js/36.954f8f61.js"><link rel="prefetch" href="/assets/js/37.19095097.js"><link rel="prefetch" href="/assets/js/38.46c49a72.js"><link rel="prefetch" href="/assets/js/39.62e6495b.js"><link rel="prefetch" href="/assets/js/4.e37d5139.js"><link rel="prefetch" href="/assets/js/40.bd080ea8.js"><link rel="prefetch" href="/assets/js/41.977ad74f.js"><link rel="prefetch" href="/assets/js/42.3f7aa5f1.js"><link rel="prefetch" href="/assets/js/43.020fd094.js"><link rel="prefetch" href="/assets/js/44.e7635ff6.js"><link rel="prefetch" href="/assets/js/45.1089c01a.js"><link rel="prefetch" href="/assets/js/46.d2306a7c.js"><link rel="prefetch" href="/assets/js/47.b015dbaa.js"><link rel="prefetch" href="/assets/js/48.52ae60f4.js"><link rel="prefetch" href="/assets/js/49.c65d5346.js"><link rel="prefetch" href="/assets/js/50.60eaf500.js"><link rel="prefetch" href="/assets/js/51.10ea37ff.js"><link rel="prefetch" href="/assets/js/52.0c51280a.js"><link rel="prefetch" href="/assets/js/53.4b291353.js"><link rel="prefetch" href="/assets/js/54.b04a9bf3.js"><link rel="prefetch" href="/assets/js/55.98a137e7.js"><link rel="prefetch" href="/assets/js/56.269da9a3.js"><link rel="prefetch" href="/assets/js/57.bede00b0.js"><link rel="prefetch" href="/assets/js/58.96fdaa51.js"><link rel="prefetch" href="/assets/js/59.67d9a39c.js"><link rel="prefetch" href="/assets/js/6.09da8a89.js"><link rel="prefetch" href="/assets/js/60.918734d1.js"><link rel="prefetch" href="/assets/js/61.b0e3db29.js"><link rel="prefetch" href="/assets/js/62.42a4fd2e.js"><link rel="prefetch" href="/assets/js/63.73a1becb.js"><link rel="prefetch" href="/assets/js/64.a8ec535c.js"><link rel="prefetch" href="/assets/js/65.e1f730fc.js"><link rel="prefetch" href="/assets/js/66.6e38e6cc.js"><link rel="prefetch" href="/assets/js/67.ec754209.js"><link rel="prefetch" href="/assets/js/7.3dbb874c.js"><link rel="prefetch" href="/assets/js/8.049a9b66.js"><link rel="prefetch" href="/assets/js/9.b02dcb7c.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.e0d4892b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Today Nara Learned</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  About
+</a></div><div class="nav-item"><a href="/note/" class="nav-link">
+  Note
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="TIL" class="dropdown-title"><span class="title">TIL</span> <span class="arrow down"></span></button> <button type="button" aria-label="TIL" class="mobile-dropdown-title"><span class="title">TIL</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/til/aws/" class="nav-link">
+  AWS
+</a></li><li class="dropdown-item"><!----> <a href="/til/cs/" class="nav-link">
+  CS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Code craft" class="dropdown-title"><span class="title">Craft</span> <span class="arrow down"></span></button> <button type="button" aria-label="Code craft" class="mobile-dropdown-title"><span class="title">Craft</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/craft/efish/" class="nav-link">
+  Efish
+</a></li><li class="dropdown-item"><!----> <a href="/craft/shieldee/" class="nav-link">
+  Shieldee
+</a></li><li class="dropdown-item"><!----> <a href="/craft/panopticon/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Panopticon
+</a></li><li class="dropdown-item"><!----> <a href="/craft/aws-pricechecker/" class="nav-link">
+  AWS Pricechecker
+</a></li><li class="dropdown-item"><!----> <a href="/craft/ri-watcher/" class="nav-link">
+  AWS RI-Watcher
+</a></li><li class="dropdown-item"><!----> <a href="/craft/ssm-watcher/" class="nav-link">
+  AWS SSM-Watcher
+</a></li><li class="dropdown-item"><!----> <a href="/craft/worklight/" class="nav-link">
+  Worklight
+</a></li><li class="dropdown-item"><!----> <a href="/craft/cheakbbang/" class="nav-link">
+  Cheakbbang
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><a href="/about/" class="nav-link">
+  About
+</a></div><div class="nav-item"><a href="/note/" class="nav-link">
+  Note
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="TIL" class="dropdown-title"><span class="title">TIL</span> <span class="arrow down"></span></button> <button type="button" aria-label="TIL" class="mobile-dropdown-title"><span class="title">TIL</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/til/aws/" class="nav-link">
+  AWS
+</a></li><li class="dropdown-item"><!----> <a href="/til/cs/" class="nav-link">
+  CS
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Code craft" class="dropdown-title"><span class="title">Craft</span> <span class="arrow down"></span></button> <button type="button" aria-label="Code craft" class="mobile-dropdown-title"><span class="title">Craft</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/craft/efish/" class="nav-link">
+  Efish
+</a></li><li class="dropdown-item"><!----> <a href="/craft/shieldee/" class="nav-link">
+  Shieldee
+</a></li><li class="dropdown-item"><!----> <a href="/craft/panopticon/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Panopticon
+</a></li><li class="dropdown-item"><!----> <a href="/craft/aws-pricechecker/" class="nav-link">
+  AWS Pricechecker
+</a></li><li class="dropdown-item"><!----> <a href="/craft/ri-watcher/" class="nav-link">
+  AWS RI-Watcher
+</a></li><li class="dropdown-item"><!----> <a href="/craft/ssm-watcher/" class="nav-link">
+  AWS SSM-Watcher
+</a></li><li class="dropdown-item"><!----> <a href="/craft/worklight/" class="nav-link">
+  Worklight
+</a></li><li class="dropdown-item"><!----> <a href="/craft/cheakbbang/" class="nav-link">
+  Cheakbbang
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Panopticon</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/craft/panopticon/#_0-시나리오" class="sidebar-link">0. 시나리오</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/craft/panopticon/#_1-cloudtrail-설정하기" class="sidebar-link">1. CloudTrail 설정하기</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/craft/panopticon/#_0-추적-속성-선택" class="sidebar-link">(0) 추적 속성 선택</a></li><li class="sidebar-sub-header"><a href="/craft/panopticon/#_1-로그-이벤트-선택" class="sidebar-link">(1) 로그 이벤트 선택</a></li></ul></li><li><a href="/craft/panopticon/#_2-serverless-framwork-로-작성한-코드-사용하기" class="sidebar-link">2. serverless-framwork 로 작성한 코드 사용하기</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/craft/panopticon/#_1-panopticon-받기" class="sidebar-link">(1) Panopticon 받기</a></li><li class="sidebar-sub-header"><a href="/craft/panopticon/#_2-serverless-설치" class="sidebar-link">(2) serverless 설치</a></li><li class="sidebar-sub-header"><a href="/craft/panopticon/#_3-deploy-전-환경변수-설정하기" class="sidebar-link">(3) deploy 전 환경변수 설정하기</a></li><li class="sidebar-sub-header"><a href="/craft/panopticon/#_4-sls-deploy-하기" class="sidebar-link">(4) sls deploy 하기</a></li></ul></li><li><a href="/craft/panopticon/#_3-실제-동작-화면" class="sidebar-link">3. 실제 동작 화면</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/craft/panopticon/#_1-보안그룹-생성" class="sidebar-link">(1) 보안그룹 생성</a></li><li class="sidebar-sub-header"><a href="/craft/panopticon/#_2-보안그룹-삭제" class="sidebar-link">(2) 보안그룹 삭제</a></li><li class="sidebar-sub-header"><a href="/craft/panopticon/#_3-보안그룹-수정" class="sidebar-link">(3) 보안그룹 수정</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="frontmatter-title"><a href="#frontmatter-title" class="header-anchor">#</a> Panopticon</h1> <div class="custom-block tip"><p class="custom-block-title">목표</p> <p>CloudTrail을 이용한 Security Group 수정 알림 Slack으로 수신하기</p></div> <h2 id="_0-시나리오"><a href="#_0-시나리오" class="header-anchor">#</a> 0. 시나리오</h2> <p>AWS 보안그룹이 수정, 생성, 삭제 됐을 때 알림을 받고 싶다.</p> <ol><li>CloudTrail 을 이용하여 Write 된 내역을 추적한다.</li> <li>CloudWatch Event 를 통해 1 중, 특정 이벤트(EC2 Security Group 편집)가 발생했을 때 Lambda를 호출하게 한다.</li> <li>Lambda에 Slack 메시지를 보낼 수 있게 코드를 작성한다.</li> <li>이 모든 과정에 필요한 IAM Role, CloudWatch Event, Lambda 등을 따로 작성하지 않고 Serverless Framwork 를 이용하여 Wrapping 된 파일을 이용한다.</li></ol> <h2 id="_1-cloudtrail-설정하기"><a href="#_1-cloudtrail-설정하기" class="header-anchor">#</a> 1. CloudTrail 설정하기</h2> <p><img src="/assets/img/2020-07-20__11.53.50.50d2861f.png" alt="2020-07-20__11.53.50.png"></p> <ol><li>CloudTrail → 추적 생성</li></ol> <h3 id="_0-추적-속성-선택"><a href="#_0-추적-속성-선택" class="header-anchor">#</a> (0) 추적 속성 선택</h3> <p><img src="/assets/img/2020-07-20__11.57.31.cfee7235.png" alt="2020-07-20__11.57.31.png"></p> <ul><li>추적 이름 지정</li> <li>스토리지 위치 지정 - 새 S3 버킷에 생성해도 되고, 기존 버킷을 이용해도 OK</li></ul> <p><img src="/assets/img/2020-07-20__11.57.37.0bb21700.png" alt="2020-07-20__11.57.37.png"></p> <ul><li>KMS를 사용한다면 KMS 키 설정</li></ul> <p><img src="/assets/img/2020-07-20__11.59.15.1bf5917a.png" alt="2020-07-20__11.59.15.png"></p> <ul><li>Log를 남기겠습니다.</li> <li>IAM 역할을 지정
+<ul><li>새로 만들어야 한다면 <code>&gt; 정책문서</code> 를 클릭하여 나오는 JSON을 참고하여 생성</li></ul></li> <li><code>다음</code></li></ul> <h3 id="_1-로그-이벤트-선택"><a href="#_1-로그-이벤트-선택" class="header-anchor">#</a> (1) 로그 이벤트 선택</h3> <p><img src="/assets/img/2020-07-20__12.59.21.e3c197c8.png" alt="2020-07-20__12.59.21.png"></p> <ul><li>수정된 목록만 받아 볼 예정이기 때문에 API 활동 → 쓰기 에만 체크 합니다.</li> <li><code>다음</code> <ul><li>검토 및 생성</li></ul></li></ul> <p><img src="/assets/img/2020-07-20__1.08.19.5a1a0631.png" alt="2020-07-20__1.08.19.png"></p> <h2 id="_2-serverless-framwork-로-작성한-코드-사용하기"><a href="#_2-serverless-framwork-로-작성한-코드-사용하기" class="header-anchor">#</a> 2. serverless-framwork 로 작성한 코드 사용하기</h2> <h3 id="_1-panopticon-받기"><a href="#_1-panopticon-받기" class="header-anchor">#</a> (1) Panopticon 받기</h3> <p><a href="https://github.com/narashin/AWS-CloudTrail-Panopticon" target="_blank" rel="noopener noreferrer">narashin/AWS-CloudTrail-Panopticon<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>🔼Panopticon 받기</p> <h3 id="_2-serverless-설치"><a href="#_2-serverless-설치" class="header-anchor">#</a> (2) serverless 설치</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">npm</span> i -g serverless
+</code></pre></div><h3 id="_3-deploy-전-환경변수-설정하기"><a href="#_3-deploy-전-환경변수-설정하기" class="header-anchor">#</a> (3) deploy 전 환경변수 설정하기</h3> <ul><li><code>serverless.yml</code> 생성</li></ul> <div class="language-jsx extra-class"><pre class="language-jsx"><code>service<span class="token operator">:</span> cloudwatch<span class="token operator">-</span>ec2<span class="token operator">-</span>sg
+
+provider<span class="token operator">:</span>
+  name<span class="token operator">:</span> aws
+  runtime<span class="token operator">:</span> nodejs12<span class="token punctuation">.</span>x
+  stage<span class="token operator">:</span> dev
+  region<span class="token operator">:</span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">Region</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">
+  iamRoleStatements:
+    - Effect: &quot;Allow&quot;
+      Action:
+        - &quot;ec2:DescribeSecurityGroups&quot;
+      Resource: &quot;*&quot;
+  environment: 
+    SLACK_URL: &quot;&lt;보낼 채널의 WEBHOOK_URL&gt;&quot;
+
+functions:
+  panopticon:
+    handler: handler.panopticon
+    events:
+      - cloudwatchEvent:
+          event:
+            source:
+              - &quot;aws.ec2&quot;
+            detail-type:
+              - &quot;AWS API Call via CloudTrail&quot;
+            detail:
+                eventSource:
+                    - &quot;ec2.amazonaws.com&quot;
+                eventName:
+                    - &quot;CreateSecurityGroup&quot;
+                    - &quot;DeleteSecurityGroup&quot;
+                    - &quot;RevokeSecurityGroupIngress&quot;
+                    - &quot;RevokeSecurityGroupEgress&quot;
+                    - &quot;AuthorizesecuritygroupIngress&quot;
+                    - &quot;AuthorizesecuritygroupEgress&quot;
+</span></code></pre></div><ul><li>Nodejs12.x</li> <li>iamRole : <code>&quot;ec2:DescribeSecurityGroups&quot;</code> 허용</li> <li>CloudwatchEvent On
+<ul><li>EC2 Event Source 들
+<ul><li>&quot;CreateSecurityGroup&quot;</li> <li>&quot;DeleteSecurityGroup&quot;</li> <li>&quot;RevokeSecurityGroupIngress&quot;</li> <li>&quot;RevokeSecurityGroupEgress&quot;</li> <li>&quot;AuthorizesecuritygroupIngress&quot;</li> <li>&quot;AuthorizesecuritygroupEgress&quot;</li></ul></li></ul></li></ul> <h3 id="_4-sls-deploy-하기"><a href="#_4-sls-deploy-하기" class="header-anchor">#</a> (4) <code>sls deploy</code> 하기</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>$ sls deploy
+</code></pre></div><ul><li>먼저 프로그래밍 방식의 IAM AWS Access Key, Secret Key로 aws configure가 작성 되어있어야 함.
+<ul><li><code>aws configure</code> 로 확인.</li></ul></li> <li>Serverless 가 설치되어 있어야 함.</li> <li>Slack Webhook URL이 설정되어 있어야 함.</li></ul> <h2 id="_3-실제-동작-화면"><a href="#_3-실제-동작-화면" class="header-anchor">#</a> 3. 실제 동작 화면</h2> <h3 id="_1-보안그룹-생성"><a href="#_1-보안그룹-생성" class="header-anchor">#</a> (1) 보안그룹 생성</h3> <p><img src="/assets/img/2020-07-20__1.43.36.1d55a5a8.png" alt="2020-07-20__1.43.36.png"></p> <h3 id="_2-보안그룹-삭제"><a href="#_2-보안그룹-삭제" class="header-anchor">#</a> (2) 보안그룹 삭제</h3> <p><img src="/assets/img/2020-07-20__1.42.49.232b4815.png" alt="2020-07-20__1.42.49.png"></p> <h3 id="_3-보안그룹-수정"><a href="#_3-보안그룹-수정" class="header-anchor">#</a> (3) 보안그룹 수정</h3> <p><img src="/assets/img/2020-07-20__1.43.51.b1a819fc.png" alt="2020-07-20__1.43.51.png"></p> <ul><li>보안그룹 상세 추가 수정</li></ul> <p><img src="/assets/img/2020-07-20__1.43.24.69c06d5c.png" alt="2020-07-20__1.43.24.png"></p> <ul><li>보안그룹 상세 삭제</li></ul></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.1c798ad4.js" defer></script><script src="/assets/js/2.85c0c7e1.js" defer></script><script src="/assets/js/5.6d0e4e7b.js" defer></script>
+  </body>
+</html>
