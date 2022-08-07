@@ -4,7 +4,16 @@ var getChildren = require('./childscript');
 module.exports = {
   title: 'Today Nara Learned',
   description: '또 하나 배워갑니다.',
-  head: [['link', { rel: 'icon', href: '/logo.jpg' }]],
+  head: [['link', { rel: 'icon', href: '/logo.jpg' }],
+  [
+    "script",
+    {
+      async: true,
+      src: "https://www.googletagmanager.com/gtag/js?id=G-HY9BVBRNH5",
+    },
+  ],
+  ["script", {}, ["window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-HY9BVBRNH5');"]],
+],
   themeConfig: {
     sidebar: {
       '/note/': [
@@ -59,12 +68,12 @@ module.exports = {
   plugins: [
     ['@vuepress/back-to-top'],
     ['@vuepress/plugin-active-header-links'],
-    [
-      '@vuepress/google-analytics',
-      {
-        ga: 'G-HY9BVBRNH5',
-      },
-    ],
+    // [
+    //   '@vuepress/google-analytics',
+    //   {
+    //     ga: 'G-HY9BVBRNH5',
+    //   },
+    // ],
   ],
   configureWebpack: {
     resolve: {
